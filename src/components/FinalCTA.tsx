@@ -41,12 +41,12 @@ const FinalCTA = () => {
           </a>
 
           <a
-            href="https://instagram.com/margaritaslavich"
+            href="https://instagram.com/margarita.slavich"
             target="_blank"
             rel="noopener noreferrer"
             className="luxury-label border border-primary-foreground/50 text-primary-foreground px-10 py-3.5 tracking-[0.2em] transition-all duration-500 hover:bg-primary-foreground hover:text-foreground w-full text-center"
           >
-            {t('cta.instagram')} @margaritaslavich
+            {t('cta.instagram')} @margarita.slavich
           </a>
         </div>
       </div>
