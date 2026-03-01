@@ -3,9 +3,11 @@ import { initReactI18next } from 'react-i18next';
 import en from './locales/en.json';
 import ua from './locales/ua.json';
 
+
 i18n
   .use(initReactI18next)
   .init({
+    showSupportNotice: false,
     resources: {
       en: { translation: en },
       ua: { translation: ua },

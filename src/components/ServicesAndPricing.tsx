@@ -70,7 +70,7 @@ const ServiceCard = ({
 
       {/* Expandable content */}
       <div
-        className="overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+        className="overflow-hidden transition-all duration-700 ease-out"
         style={{ maxHeight: isOpen ? '500px' : '0', opacity: isOpen ? 1 : 0 }}
       >
         <div className="px-6 pb-7 border-t border-border pt-5">

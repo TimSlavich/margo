@@ -26,7 +26,7 @@ const Hero = () => {
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <div
-          className="transition-all duration-[1.5s] ease-out"
+          className="transition-all duration-1500 ease-out"
           style={{
             opacity: loaded ? 1 : 0,
             transform: loaded ? 'translateY(0)' : 'translateY(20px)',
