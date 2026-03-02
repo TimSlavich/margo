@@ -21,6 +21,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   const setLanguage = (lang: Language) => {
     i18n.changeLanguage(lang);
+    try {
+      localStorage.setItem('margo-lang', lang);
+    } catch {}
   };
 
   const currencySymbol = language === 'en' ? 'SGD' : '$';

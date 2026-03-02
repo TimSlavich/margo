@@ -25,8 +25,8 @@ const FinalCTA = () => {
 
         <div className="flex flex-col items-center gap-4 w-full max-w-xs mx-auto">
           <a
-            href="mailto:margarita@slavich.com"
-            className="luxury-label border border-primary-foreground/50 text-primary-foreground px-10 py-3.5 tracking-[0.2em] transition-all duration-500 hover:bg-primary-foreground hover:text-foreground w-full text-center"
+            href="mailto:marharyta.slavych@gmail.com"
+            className="luxury-label border border-secondary/60 text-primary-foreground px-10 py-3.5 tracking-[0.2em] transition-all duration-500 hover:bg-secondary hover:text-secondary-foreground w-full text-center"
           >
             {t('cta.email')}
           </a>
@@ -35,7 +35,7 @@ const FinalCTA = () => {
             href="https://t.me/MSlavych"
             target="_blank"
             rel="noopener noreferrer"
-            className="luxury-label border border-primary-foreground/50 text-primary-foreground px-10 py-3.5 tracking-[0.2em] transition-all duration-500 hover:bg-primary-foreground hover:text-foreground w-full text-center"
+            className="luxury-label border border-secondary/60 text-primary-foreground px-10 py-3.5 tracking-[0.2em] transition-all duration-500 hover:bg-secondary hover:text-secondary-foreground w-full text-center"
           >
             {t('cta.telegram')} @MSlavych
           </a>
@@ -44,7 +44,7 @@ const FinalCTA = () => {
             href="https://instagram.com/margarita.slavich"
             target="_blank"
             rel="noopener noreferrer"
-            className="luxury-label border border-primary-foreground/50 text-primary-foreground px-10 py-3.5 tracking-[0.2em] transition-all duration-500 hover:bg-primary-foreground hover:text-foreground w-full text-center"
+            className="luxury-label border border-secondary/60 text-primary-foreground px-10 py-3.5 tracking-[0.2em] transition-all duration-500 hover:bg-secondary hover:text-secondary-foreground w-full text-center"
           >
             {t('cta.instagram')} @margarita.slavich
           </a>

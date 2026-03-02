@@ -42,8 +42,8 @@ const Hero = () => {
 
           <div className="flex flex-col items-center gap-6">
             <a
-              href="mailto:margarita@slavich.com"
-              className="luxury-label border border-primary-foreground/40 text-primary-foreground px-8 py-3 tracking-[0.2em] transition-all duration-500 hover:bg-primary-foreground hover:text-foreground"
+              href="mailto:marharyta.slavych@gmail.com"
+              className="luxury-label border border-secondary/60 text-primary-foreground px-8 py-3 tracking-[0.2em] transition-all duration-500 hover:bg-secondary hover:text-secondary-foreground"
             >
               {t('hero.cta')}
             </a>

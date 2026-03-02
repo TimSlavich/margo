@@ -4,72 +4,58 @@
 
 @layer base {
   :root {
-    --background: 34 33% 95%;
-    --foreground: 0 0% 17%;
+    /* #DFDBD7 — soft neutral light */
+    --background: 30 11% 86%;
+    /* #5E5E56 — dark warm gray */
+    --foreground: 60 4% 35%;
 
-    --card: 34 33% 95%;
-    --card-foreground: 0 0% 17%;
+    --card: 30 11% 88%;
+    --card-foreground: 60 4% 35%;
 
-    --popover: 34 33% 95%;
-    --popover-foreground: 0 0% 17%;
+    --popover: 30 11% 86%;
+    --popover-foreground: 60 4% 35%;
 
-    --primary: 0 0% 17%;
-    --primary-foreground: 34 33% 95%;
+    /* #61191B — deep burgundy */
+    --primary: 358 59% 24%;
+    /* #DFDBD7 — light text on brand bg */
+    --primary-foreground: 30 11% 86%;
 
-    --secondary: 30 15% 85%;
-    --secondary-foreground: 0 0% 17%;
+    /* #ABBFE0 — light desaturated blue */
+    --secondary: 217 46% 77%;
+    /* #61191B — brand text on blue bg */
+    --secondary-foreground: 358 59% 24%;
 
-    --muted: 30 15% 88%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 30 8% 80%;
+    --muted-foreground: 60 4% 45%;
 
-    --accent: 30 20% 80%;
-    --accent-foreground: 0 0% 17%;
+    /* #ABBFE0 — blue accent */
+    --accent: 217 46% 77%;
+    --accent-foreground: 358 59% 24%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 15% 82%;
-    --input: 30 15% 82%;
-    --ring: 0 0% 17%;
+    --border: 30 8% 75%;
+    --input: 30 8% 75%;
+    /* #ABBFE0 — blue focus ring */
+    --ring: 217 46% 77%;
 
     --radius: 0rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 0 0% 10%;
-    --foreground: 34 33% 95%;
-    --card: 0 0% 10%;
-    --card-foreground: 34 33% 95%;
-    --popover: 0 0% 10%;
-    --popover-foreground: 34 33% 95%;
-    --primary: 34 33% 95%;
-    --primary-foreground: 0 0% 10%;
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 34 33% 95%;
-    --muted: 0 0% 18%;
-    --muted-foreground: 30 10% 60%;
-    --accent: 0 0% 18%;
-    --accent-foreground: 34 33% 95%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 34 33% 95%;
+    --sidebar-background: 30 11% 88%;
+    --sidebar-foreground: 60 4% 35%;
+    --sidebar-primary: 358 59% 24%;
+    --sidebar-primary-foreground: 30 11% 86%;
+    --sidebar-accent: 217 46% 77%;
+    --sidebar-accent-foreground: 358 59% 24%;
+    --sidebar-border: 30 8% 75%;
+    --sidebar-ring: 217 46% 77%;
   }
 }
 
 @layer base {
   html {
-    background: #1c1a18;
+    background: #5e5e56;
   }
 
   * {
@@ -78,36 +64,37 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Manrope', sans-serif;
     font-weight: 400;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
   }
 }
 
 @layer components {
   .luxury-heading {
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 0.06em;
-    line-height: 1.1;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    line-height: 1.15;
   }
 
   .luxury-body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-weight: 300;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
     line-height: 1.8;
   }
 
   .luxury-label {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     font-size: 0.7rem;

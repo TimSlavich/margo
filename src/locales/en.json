@@ -5,83 +5,171 @@
   "hero": {
     "name": "Margarita Slavich",
     "title": "Personal Stylist",
-    "tagline": "Refined wardrobe. Intentional presence.",
-    "cta": "Book a Consultation",
+    "tagline": "A wardrobe that amplifies your personality and works as a system.",
+    "cta": "Book a Free Consultation",
     "explore": "Explore"
   },
   "philosophy": {
     "label": "Philosophy",
-    "heading": "Style as collaboration",
-    "p1": "A stylist is not the person who says to throw away all your clothes — it is the person who will give a new life to your wardrobe. I truly believe it's a collaboration more than a service, because it requires commitment and trust to get the best results.",
-    "p2": "Longevity over trends. Quality over impulse. Conscious choices that evolve with you.",
-    "quote": "Style is clarity."
+    "heading": "Style is communication — before you say a word.",
+    "p1": "Your wardrobe is an extension of who you are. It should feel supportive, empowering, and aligned with your life today. Clothing should support you — not overwhelm you. I believe in quality over quantity, strategy over impulse, and timeless style over fleeting trends.",
+    "p2": "A stylist is not the person who says to throw away all your clothes — it is the person who will give a new life to your wardrobe. I truly believe it's a collaboration more than a service, because it requires commitment and trust to get the best results. It's about discovering your authentic visual language.",
+    "quote": "Style is your quiet power."
   },
   "services": {
     "label": "Services",
-    "from": "From",
+    "from": "from",
     "format": "Format",
     "duration": "Timeline",
     "inquire": "Book this service",
+    "details": "Learn more",
     "wardrobe": {
-      "title": "Wardrobe Analysis",
-      "desc": "You often find yourself staring at a full closet but still feel like you have nothing to wear. We go through every single piece together, determine what works, build outfit formulas, and create a shopping list for the missing essentials. Available offline (at your home, up to 4 hrs) and online (photo or video format).",
+      "title": "Wardrobe Audit",
+      "desc": "You often find yourself staring at a full closet but still feel like you have nothing to wear. We go through every piece together, build outfit formulas, and create a shopping list for the missing essentials.",
       "format": "Online / Offline",
-      "duration": "Up to 4 hrs offline / 10–15 business days online",
-      "price": "600"
+      "duration": "Offline: up to 4 hrs (each additional hour + SGD 100). Online: 15 business days",
+      "price": "600",
+      "details": {
+        "for": [
+          "You often find yourself staring at a full closet but still feel like you have nothing to wear.",
+          "You need efficient outfit formulas to get dressed faster in the morning.",
+          "You've experienced major life changes, like moving to a new city or starting a new job, and need a wardrobe update.",
+          "Your current wardrobe doesn't reflect who you are now or how you wish to present yourself.",
+          "You want your wardrobe to speak for you, showcasing your taste, vision, and character."
+        ],
+        "online_steps": [
+          "In the online format, I will also ask you to fill out a questionnaire and schedule a pre-analysis consultation to ensure we're on the same page.",
+          "Online wardrobe analysis can be done in two formats: photo and video. Photo Analysis: You send me photos and videos of all the items on the clean surface (background) and the same items on you. I create a presentation, and we choose a convenient time to discuss all the details via Zoom.",
+          "or Video Analysis: We schedule a convenient time for a video call and analyze everything live. You will receive a file with all the recommendations, screenshots of the outfits we created, and a shopping list a few days after the call.",
+          "You also have 2 extra weeks to ask me any questions that arise about the wardrobe review, new pieces, or any wardrobe-related issues."
+        ],
+        "offline_steps": [
+          "Style Quiz — You'll start by completing a short quiz. It helps me understand your lifestyle, preferences, and goals before we begin.",
+          "Pre-Consultation — We'll have a quick chat to connect, make sure the energy flows well between us, and set a convenient day for your wardrobe audit.",
+          "Wardrobe Audit (at your home) — On the scheduled day, I come to your place and together we go through every single piece in your closet.",
+          "Final Report & Recommendations — Within 14 business days, you'll receive a personalized file that includes a summary of everything we discussed, styling recommendations + shopping links for all key missing pieces to make your wardrobe more versatile and functional.",
+          "You also have 2 extra weeks to ask me any questions that arise about the wardrobe review, new pieces, or any wardrobe-related issues."
+        ],
+        "notes": "One session typically lasts up to 4 hours. If your wardrobe is extensive, we may plan a second session — after 4 hours, it becomes mentally draining for both of us (trust me!). During the session, I take photos of all the items we decide to keep. Then uploaded to a special app, where your entire wardrobe will live in one convenient place. You'll be able to browse your looks, plan outfits, mix and match pieces, and easily see what you already own — all from your phone."
+      }
     },
     "shopping": {
-      "title": "Personal Shopping Day",
-      "desc": "I do pre-shopping to save your time, create a curated list, and accompany you in person. We combine offline and online purchases due to limited stock availability. Note: available after a wardrobe audit.",
-      "format": "Offline",
-      "duration": "Up to 4 hrs (+S$100 per extra hour)",
-      "price": "600"
-    },
-    "shopping_online": {
-      "title": "Shopping Curation",
-      "desc": "I select and curate a personalised shopping list tailored to your body type, style, and budget. Includes complete outfit suggestions and 2 weeks of follow-up support as items arrive.",
-      "format": "Online",
-      "duration": "10–15 business days",
-      "price": "600"
+      "title": "Shopping curation",
+      "desc": "A service designed to complement your existing wardrobe with new items, helping to create a fully functional wardrobe or building one from scratch for the season. Please note: this service is only offered after we have completed a wardrobe revamp. If you want to create a wardrobe from scratch, please refer to the Capsule Wardrobe service.",
+      "format": "Online / Offline",
+      "duration": "Online: 7–10 business days. Offline: up to 4 hrs (each additional hour + SGD 100)",
+      "price": "600",
+      "details": {
+        "for": [
+          "You've completed a wardrobe audit and want to find the new pieces we agreed on.",
+          "You want to quickly resolve a purchase and choose the best from available options.",
+          "If you want to create a wardrobe from scratch, please refer to the Capsule Wardrobe service."
+        ],
+        "online_steps": [
+          "We will schedule a pre-consultation to discuss your request and details.",
+          "We create a list of items relevant to your needs and style direction.",
+          "Within 7–10 business days you will receive: General style guidance. A shopping list with items selected according to your body type, needs and budget. Complete outfit suggestions incorporating items from the shopping list. Two weeks of follow-up support to address any issues with the items as they arrive. I will find and recommend alternative products if needed.",
+          "You also have 2 extra weeks to ask me any questions that arise about the wardrobe review, new pieces, or any wardrobe-related issues."
+        ],
+        "offline_steps": [
+          "We will schedule a pre-consultation to discuss your request and details.",
+          "We create a list of items relevant to your needs and style direction.",
+          "Plan and secure the date.",
+          "I do a pre-shopping for your convenience and to save time.",
+          "We combine offline and online purchases due to limited stock and sizing. The offline session takes up to 4 hours (every hour after will cost 100 SGD).",
+          "You also have 2 extra weeks to ask me any questions that arise about the wardrobe review, new pieces, or any wardrobe-related issues."
+        ],
+        "notes": "Be aware that: Each item selected can be replaced once within 2 weeks. Buying many items at once can be mentally challenging due to the high cost. If it's hard to buy everything at once, follow the list when possible and focus on the details such as material, length, and cut I selected previously. P.S. Working with a stylist can be overwhelming due to the volume of new information. Give yourself time and everything will work out :) This service is a combined approach due to the specifics of shopping in Singapore. For mass-market and mid-range items, I would recommend ordering online from my curated selections and trying the items at home (via video, photos, or an in-person visit) due to the limitations of store availability. For luxury items, you have the option to select the shopping method you prefer. Nonetheless, online shopping usually provides a better range and selection, making it easier to find unique and special items with the convenience of home fitting. If this option isn't suitable, I will create a shopping route, reserve items in offline stores and showrooms, and assist you in selecting items. I respect your time and aim to offer the best service possible."
+      }
     },
     "capsule": {
-      "title": "Seasonal Capsule",
-      "desc": "Up to 30 pieces that coordinate seamlessly together for a full season. Includes a complete lookbook with all outfit combinations, links, and ordering support. Quality is my priority — durable, stylish pieces.",
+      "title": "Capsule wardrobe",
+      "desc": "Creating a capsule wardrobe involves selecting pieces that work seamlessly together, tailored to your style and needs. This could be a seasonal capsule, for vacation or business trip, trend-based, or timeless, depending on your preferences and values.",
       "format": "Online",
-      "duration": "14–20 business days",
-      "price": "600"
-    },
-    "capsule_travel": {
-      "title": "Travel Capsule",
-      "desc": "Up to 15 pieces for a vacation, business trip, or any focused wardrobe need. Everything coordinates together — you'll always have something to wear. Includes outfit combinations and 2 weeks of support.",
-      "format": "Online",
-      "duration": "7–10 business days",
-      "price": "500"
+      "duration": "Around 14–20 business days (depending on capsule size)",
+      "price": "500",
+      "details": {
+        "for": [
+          "Saves a significant amount of time that would otherwise be spent shopping in stores or online.",
+          "Provides a comprehensive selection where all pieces coordinate with each other.",
+          "Ensures that you purchase only items that truly fit, you like, and will be used.",
+          "Items are chosen within a price range that suits you."
+        ],
+        "steps": [
+          "Quiz and style test — helps me understand your lifestyle, preferences, and goals.",
+          "Pre-consultation — to ask questions, discuss your expectations, and see if we share the same vision.",
+          "It takes around 14–20 days to create the capsule (depending on its size).",
+          "After you receive the file, we schedule a follow-up call where I explain how it works and answer all your questions.",
+          "You also have 2 extra weeks to ask me any questions that arise about the capsule, new pieces, or any wardrobe-related issues.",
+          "My full support and guidance throughout the ordering process, including finding alternatives and discussing fit and nuances in online shopping.",
+          "You will receive a functional selection of items that coordinate well together, offering various combinations and purposes from a relatively small number of pieces (quantity and budget are discussed in advance)."
+        ],
+        "notes": "P.S. Quality is my priority, which might lead to higher costs. I will present several options but focus on durable, stylish pieces, avoiding too much synthetic material from mass-market brands. The capsule is built from new pieces (up to 5 items from your existing wardrobe can be included)."
+      }
     },
     "event": {
-      "title": "Event Styling",
-      "desc": "For any event where you need to look your best — a wedding, public appearance, photoshoot, or formal gathering. We'll have a consultation on budget, style, and preferences. I put together 3 outfit options considering the theme and dress code for you to choose the best one.",
+      "title": "Event / photoshoot looks",
+      "desc": "For any event where you need to look your best and feel confident — be it a wedding, a public appearance, or a formal gathering — we'll create the perfect outfit.",
       "format": "Online / Offline",
       "duration": "Varies by complexity",
-      "price": "200"
+      "price": "250",
+      "details": {
+        "for": [
+          "You need to look your best and feel confident at an important event.",
+          "You're preparing for a wedding, public appearance, photoshoot, or formal gathering."
+        ],
+        "steps": [
+          "We will have a consultation for the main points: budget, style, and preferences.",
+          "I will then put together 3 outfit options considering the theme and dress code of the event and send those choices for you to pick the best one.",
+          "The outfit can either be assembled from your current wardrobe or include new items and accessories tailored for your event."
+        ],
+        "notes": "The price for this service varies depending on the complexity of the outfit and the work format. From 250 SGD per outfit."
+      }
+    },
+    "mentoring": {
+      "title": "Monthly Mentoring",
+      "desc": "Direct access to your stylist. Price: S$350/month or S$300/month for a 3-month subscription.",
+      "format": "Online",
+      "duration": "1 month",
+      "price": "350",
+      "details": {
+        "for": [
+          "You've already worked with me and want consistent support to maintain and grow your style.",
+          "You often doubt your choices and want to have a professional \"on call\" to guide you.",
+          "You want to shop smarter — saving time, money, and energy while investing only in what truly works for you."
+        ],
+        "steps": [
+          "Direct access to your stylist — You can reach out anytime during the day. I'm here to support you, guide your choices, and help you stay confident in your decisions. (We agree on communication hours individually so you can always count on my timely response within my working schedule.)",
+          "Shopping guidance — Planning a store visit or shopping online? Message me before or during your shopping trip — I'll help you decide whether a piece is worth buying or better to skip. We coordinate your shopping time in advance so I can stay available while you're trying things on, making the process quick and effortless.",
+          "Outfit and item curation — Creating outfits for various occasions. Support in choosing specific categories (e.g. \"I need the perfect white shirt\" or \"help me find everyday jeans\").",
+          "Personalized product search — I'll help you find what you're looking for — from the right silhouette to the right store — with attention to quality, fit, and value.",
+          "Stylist's recommendations — Ongoing advice, inspiration, and support throughout the month — tailored to your pace and lifestyle."
+        ],
+        "notes": "This is not deep personal coaching. I provide professional advice and recommendations, but final decisions remain entirely yours. My goal is to guide, not to impose — helping you make conscious, confident, and independent style choices. Price: S$350/month or S$300/month for a 3-month subscription."
+      }
     }
   },
   "process": {
     "label": "How It Works",
     "1": {
       "title": "Style Quiz",
-      "desc": "You start by completing a short quiz. It helps me understand your lifestyle, preferences, body type, and goals before we begin."
+      "desc": "We begin with a short questionnaire designed to help me understand you better — your lifestyle, preferences, and personal goals."
     },
     "2": {
       "title": "Pre-Consultation",
-      "desc": "A 30–45 minute call to connect, align on goals and vision, discuss details, and set a convenient date. We make sure the energy flows well between us."
+      "desc": "A 30–45 minute call where we connect, align on your goals and vision, discuss key details, and schedule a convenient time to begin."
     },
     "3": {
-      "title": "The Service",
-      "desc": "The main work: wardrobe audit at your place, shopping day, or capsule creation. I take photos of everything we keep, build outfits, create lookbooks, and handle all the details."
+      "title": "Core Process",
+      "desc": "Depending on the service you choose, I conduct a wardrobe audit, curate new pieces, and carefully develop all styling materials tailored to you."
     },
     "4": {
-      "title": "Report + 2 Weeks Support",
-      "desc": "You receive a personalized file with all recommendations, outfit screenshots, shopping links, and a styling guide. Then you have 2 weeks to ask any questions."
+      "title": "Final Report",
+      "desc": "You receive a personalized file with detailed recommendations, complete outfit combinations, shopping links, your style direction, and all essential insights."
+    },
+    "5": {
+      "title": "Ongoing Support",
+      "desc": "For two weeks after receiving the file, you have my full support during working hours for any questions, adjustments, or guidance you may need."
     }
   },
   "pricing": {
@@ -89,12 +177,12 @@
     "note": "All prices in SGD. Each additional hour billed separately.",
     "wardrobe_audit": {
       "title": "Wardrobe Audit",
-      "desc": "Offline (up to 4 hrs, each extra hour +S$100) or online (10–15 business days)",
+      "desc": "Offline (up to 4 hrs, each extra hour + SGD 100) or online (15 business days)",
       "price": "600"
     },
     "shopping": {
       "title": "Shopping Assistance",
-      "desc": "Personal shopping day offline (up to 4 hrs, +S$100/hr) or online curation (10–15 business days)",
+      "desc": "Personal shopping day offline (up to 4 hrs, + SGD 100/hr) or online curation (7–10 business days)",
       "price": "600"
     },
     "travel_capsule": {
@@ -110,22 +198,29 @@
     "event": {
       "title": "Event / Photoshoot Styling",
       "desc": "3 outfit options tailored to your event. Price varies by complexity and format.",
-      "price": "200",
+      "price": "250",
       "price_max": "1000"
     }
   },
   "experience": {
     "label": "Values",
-    "1": "Quality over impulse.",
-    "2": "Timeless over trendy.",
-    "3": "Personal over generic.",
-    "4": "Your wardrobe as self-expression."
+    "1": "dress for the woman you are becoming",
+    "2": "quality over impulse",
+    "3": "timeless over trendy",
+    "4": "elevate your every day"
+  },
+  "modal": {
+    "for_whom": "This service is for you if:",
+    "steps": "Steps:",
+    "online": "Online — Steps:",
+    "offline": "Offline — Steps:",
+    "important": "Important:"
   },
   "gallery": {
     "label": "Selected Work"
   },
   "cta": {
-    "heading": "Let's refine your wardrobe.",
+    "heading": "Lets build a refined wardrobe that works.",
     "email": "Book via Email",
     "telegram": "Telegram",
     "instagram": "Instagram"

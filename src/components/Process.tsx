@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
-const steps = [1, 2, 3, 4] as const;
+const steps = [1, 2, 3, 4, 5] as const;
 
 const ProcessStep = ({ step }: { step: number }) => {
   const { t } = useLanguage();
@@ -30,7 +30,7 @@ const Process = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-24 md:py-40 px-6 md:px-16 lg:px-24">
+    <section id="process" className="py-24 md:py-40 px-6 md:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto">
         <div ref={ref} className={`fade-up ${isVisible ? 'visible' : ''}`}>
           <p className="luxury-label text-muted-foreground mb-16 text-center">{t('process.label')}</p>

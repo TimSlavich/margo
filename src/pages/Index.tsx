@@ -19,8 +19,8 @@ const Index = () => {
       <Gallery />
       <FinalCTA />
 
-      <footer className="py-12 text-center">
-        <p className="luxury-label text-muted-foreground">
+      <footer className="py-12 text-center bg-foreground">
+        <p className="luxury-label text-primary-foreground/60">
           © 2025 Margarita Slavich. All rights reserved.
         </p>
       </footer>
