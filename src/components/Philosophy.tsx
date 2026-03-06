@@ -16,6 +16,8 @@ const Philosophy = () => {
   const targetOffset = useRef(0);
   const currentOffset = useRef(0);
   const rafId = useRef<number>(0);
+  const rafActive = useRef(false);
+  const isTouch = useRef('ontouchstart' in window || navigator.maxTouchPoints > 0);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
 
   // Обновляем высоту секции при ресайзе (--real-100vh устанавливается глобально в index.html)
@@ -40,23 +42,45 @@ const Philosophy = () => {
   }, []);
 
   useEffect(() => {
-    // rAF lerp — pixels вместо vh, чтобы iOS правильно считал
-    const animate = () => {
-      const track = imageTrackRef.current;
-      if (track) {
-        const diff = targetOffset.current - currentOffset.current;
-        if (Math.abs(diff) > 0.5) {
-          currentOffset.current += diff * 0.15;
-          track.style.transform = `translate3d(0, -${currentOffset.current}px, 0)`;
-        } else if (diff !== 0) {
-          // Snap точно на позицию, чтобы не было бесконечного микро-дрейфа
-          currentOffset.current = targetOffset.current;
-          track.style.transform = `translate3d(0, -${currentOffset.current}px, 0)`;
+    const startRaf = () => {
+      if (rafActive.current) return;
+      rafActive.current = true;
+
+      const animate = () => {
+        if (!rafActive.current) return;
+        const track = imageTrackRef.current;
+        if (track) {
+          const diff = targetOffset.current - currentOffset.current;
+          if (Math.abs(diff) > 0.5) {
+            currentOffset.current += diff * 0.15;
+            track.style.transform = `translate3d(0, -${currentOffset.current}px, 0)`;
+            rafId.current = requestAnimationFrame(animate);
+          } else if (diff !== 0) {
+            currentOffset.current = targetOffset.current;
+            track.style.transform = `translate3d(0, -${currentOffset.current}px, 0)`;
+            rafActive.current = false;
+          } else {
+            rafActive.current = false;
+          }
+        } else {
+          rafActive.current = false;
         }
-      }
+      };
       rafId.current = requestAnimationFrame(animate);
     };
-    rafId.current = requestAnimationFrame(animate);
+
+    const applyImageOffset = (offset: number) => {
+      const track = imageTrackRef.current;
+      if (!track) return;
+      // На touch-устройствах snap сразу — нет lag от lerp
+      if (isTouch.current) {
+        currentOffset.current = offset;
+        track.style.transform = `translate3d(0, -${offset}px, 0)`;
+      } else {
+        targetOffset.current = offset;
+        startRaf();
+      }
+    };
 
     const handleScroll = () => {
       const section = sectionRef.current;
@@ -71,7 +95,7 @@ const Philosophy = () => {
       const imageIndex = Math.min(PANELS - 1, Math.floor(progress * PANELS));
       const textIndex = imageIndex < 2 ? 0 : 1;
 
-      targetOffset.current = imageIndex * vh;
+      applyImageOffset(imageIndex * vh);
 
       if (textIndex !== lastTextIndex.current) {
         lastTextIndex.current = textIndex;
@@ -88,6 +112,7 @@ const Philosophy = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      rafActive.current = false;
       cancelAnimationFrame(rafId.current);
     };
   }, []);

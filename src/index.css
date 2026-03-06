@@ -135,15 +135,9 @@
   }
 
   .parallax-bg {
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: center;
     background-size: cover;
-  }
-
-  @media (max-width: 768px) {
-    .parallax-bg {
-      background-attachment: scroll;
-    }
   }
 
   .scrollbar-hide {
