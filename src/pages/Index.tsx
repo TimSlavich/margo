@@ -9,7 +9,7 @@ import FinalCTA from '@/components/FinalCTA';
 
 const Index = () => {
   return (
-    <main>
+    <main style={{ overflowX: 'clip' }}>
       <LanguageToggle />
       <Hero />
       <Philosophy />

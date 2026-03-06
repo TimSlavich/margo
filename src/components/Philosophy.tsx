@@ -72,7 +72,7 @@ const Philosophy = () => {
               key={i}
               ref={el => { panelRefs.current[i] = el; }}
               style={{
-                minHeight: 'var(--real-100vh, 100svh)',
+                minHeight: '100svh',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -92,7 +92,7 @@ const Philosophy = () => {
             style={{
               position: 'sticky',
               top: 0,
-              height: 'var(--real-100vh, 100svh)',
+              height: '100svh',
               overflow: 'hidden',
             }}
           >
@@ -127,7 +127,7 @@ const Philosophy = () => {
             key={i}
             style={{
               position: 'relative',
-              height: 'var(--real-100vh, 100svh)',
+              height: '100svh',
               overflow: 'hidden',
             }}
           >

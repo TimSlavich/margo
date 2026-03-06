@@ -46,16 +46,17 @@
       gtag('config', 'G-NCXJ2XE3RM');
     </script>
 
-    <!-- iOS Safari viewport height fix: 100vh includes address bar, --real-100vh uses actual innerHeight -->
+    <!-- iOS Safari: set --real-100vh once on load + orientation change only.
+         Never on resize — iOS fires resize when toolbar shows/hides during scroll,
+         which causes layout reflow and visible jitter. -->
     <script>
       (function () {
         function setVh() {
           document.documentElement.style.setProperty('--real-100vh', window.innerHeight + 'px');
         }
         setVh();
-        window.addEventListener('resize', setVh);
         window.addEventListener('orientationchange', function () {
-          setTimeout(setVh, 100);
+          setTimeout(setVh, 200);
         });
       })();
     </script>

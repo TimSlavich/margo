@@ -90,7 +90,7 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
         className="relative z-10 flex flex-col w-full max-w-2xl border border-border"
         style={{
           backgroundColor: 'var(--milk)',
-          maxHeight: 'calc(var(--real-100vh, 100svh) * 0.9)',
+          maxHeight: '90svh',
           opacity: visible ? 1 : 0,
           transform: visible ? 'translateY(0) scale(1)' : 'translateY(24px) scale(0.97)',
           transition: `opacity ${DURATION}ms ${easing}, transform ${DURATION}ms ${easing}`,

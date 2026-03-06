@@ -57,8 +57,8 @@
 @layer base {
   html {
     background: #3a171a;
-    scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   * {
@@ -67,17 +67,17 @@
 
   body {
     @apply bg-background text-foreground;
-    overflow-x: hidden;
     font-family: 'Manrope', sans-serif;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
+    /* overflow-x: hidden removed — breaks iOS momentum scrolling */
   }
 
-  /* iOS Safari: 100vh includes browser chrome — use JS-set real height */
+  /* Use 100svh — stable, doesn't change when iOS toolbar shows/hides */
   .h-screen {
-    height: var(--real-100vh, 100svh);
+    height: 100svh;
   }
 
   h1, h2, h3, h4, h5, h6 {
