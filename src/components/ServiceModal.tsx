@@ -39,10 +39,23 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
       if (e.key === 'Escape') handleClose();
     };
     document.addEventListener('keydown', handleKey);
+
+    // iOS Safari ignores overflow:hidden on body — use position:fixed trick
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
     document.body.style.overflow = 'hidden';
+
     return () => {
       document.removeEventListener('keydown', handleKey);
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
       document.body.style.overflow = '';
+      window.scrollTo({ top: scrollY, behavior: 'instant' as ScrollBehavior });
     };
   }, [handleClose]);
 
@@ -77,7 +90,7 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
         className="relative z-10 flex flex-col w-full max-w-2xl border border-border"
         style={{
           backgroundColor: 'var(--milk)',
-          maxHeight: '90vh',
+          maxHeight: 'calc(var(--real-100vh, 100svh) * 0.9)',
           opacity: visible ? 1 : 0,
           transform: visible ? 'translateY(0) scale(1)' : 'translateY(24px) scale(0.97)',
           transition: `opacity ${DURATION}ms ${easing}, transform ${DURATION}ms ${easing}`,
@@ -205,7 +218,9 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
         </div>
 
         {/* Footer — never scrolls */}
-        <div className="flex-shrink-0 border-t border-border px-8 py-6 flex items-center justify-between gap-4">
+        <div className="flex-shrink-0 border-t border-border px-8 py-6 flex items-center justify-between gap-4"
+          style={{ paddingBottom: 'max(1.5rem, calc(env(safe-area-inset-bottom) + 1rem))' }}
+        >
           <p className="luxury-heading text-2xl text-black">
             {fromPrice && (
               <span className="luxury-label text-black mr-2 align-middle">

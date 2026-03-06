@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -41,6 +43,20 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-NCXJ2XE3RM');
+    </script>
+
+    <!-- iOS Safari viewport height fix: 100vh includes address bar, --real-100vh uses actual innerHeight -->
+    <script>
+      (function () {
+        function setVh() {
+          document.documentElement.style.setProperty('--real-100vh', window.innerHeight + 'px');
+        }
+        setVh();
+        window.addEventListener('resize', setVh);
+        window.addEventListener('orientationchange', function () {
+          setTimeout(setVh, 100);
+        });
+      })();
     </script>
 
     <!-- Fonts -->

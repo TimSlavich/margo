@@ -13,10 +13,25 @@ const Philosophy = () => {
   const imageTrackRef = useRef<HTMLDivElement>(null);
   const textPanelRefs = useRef<(HTMLDivElement | null)[]>([]);
   const lastTextIndex = useRef(-1);
-  const targetImageOffset = useRef(0);
-  const currentImageOffset = useRef(0);
+  const targetOffset = useRef(0);
+  const currentOffset = useRef(0);
   const rafId = useRef<number>(0);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+
+  // Обновляем высоту секции при ресайзе (--real-100vh устанавливается глобально в index.html)
+  useEffect(() => {
+    const updateHeight = () => {
+      if (sectionRef.current) {
+        sectionRef.current.style.height = `${window.innerHeight * PANELS}px`;
+      }
+    };
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    window.addEventListener('orientationchange', () => setTimeout(updateHeight, 100));
+    return () => {
+      window.removeEventListener('resize', updateHeight);
+    };
+  }, []);
 
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth < 768);
@@ -25,13 +40,18 @@ const Philosophy = () => {
   }, []);
 
   useEffect(() => {
+    // rAF lerp — pixels вместо vh, чтобы iOS правильно считал
     const animate = () => {
       const track = imageTrackRef.current;
       if (track) {
-        const diff = targetImageOffset.current - currentImageOffset.current;
-        if (Math.abs(diff) > 0.01) {
-          currentImageOffset.current += diff * 0.12;
-          track.style.transform = `translate3d(0, -${currentImageOffset.current}vh, 0)`;
+        const diff = targetOffset.current - currentOffset.current;
+        if (Math.abs(diff) > 0.5) {
+          currentOffset.current += diff * 0.15;
+          track.style.transform = `translate3d(0, -${currentOffset.current}px, 0)`;
+        } else if (diff !== 0) {
+          // Snap точно на позицию, чтобы не было бесконечного микро-дрейфа
+          currentOffset.current = targetOffset.current;
+          track.style.transform = `translate3d(0, -${currentOffset.current}px, 0)`;
         }
       }
       rafId.current = requestAnimationFrame(animate);
@@ -43,14 +63,15 @@ const Philosophy = () => {
       if (!section) return;
 
       const rect = section.getBoundingClientRect();
+      const vh = window.innerHeight;
       const scrolled = Math.max(0, -rect.top);
-      const totalScroll = Math.max(1, rect.height - window.innerHeight);
+      const totalScroll = Math.max(1, rect.height - vh);
       const progress = Math.min(1, scrolled / totalScroll);
 
       const imageIndex = Math.min(PANELS - 1, Math.floor(progress * PANELS));
       const textIndex = imageIndex < 2 ? 0 : 1;
 
-      targetImageOffset.current = imageIndex * 100;
+      targetOffset.current = imageIndex * vh;
 
       if (textIndex !== lastTextIndex.current) {
         lastTextIndex.current = textIndex;
@@ -96,6 +117,12 @@ const Philosophy = () => {
     </div>,
   ];
 
+  const imageSlotStyle: React.CSSProperties = {
+    width: '100%',
+    height: 'var(--real-100vh, 100vh)',
+    flexShrink: 0,
+  };
+
   const imageTrack = (
     <div
       ref={imageTrackRef}
@@ -105,10 +132,11 @@ const Philosophy = () => {
         left: 0,
         width: '100%',
         willChange: 'transform',
+        WebkitTransform: 'translate3d(0, 0, 0)',
       }}
     >
       {IMAGES.map((src, i) => (
-        <div key={i} style={{ width: '100%', height: '100vh', flexShrink: 0 }}>
+        <div key={i} style={imageSlotStyle}>
           <img
             src={src}
             alt=""
@@ -120,6 +148,14 @@ const Philosophy = () => {
     </div>
   );
 
+  const stickyHeight: React.CSSProperties = {
+    position: 'sticky',
+    top: 0,
+    height: 'var(--real-100vh, 100vh)',
+    overflow: 'hidden',
+    WebkitOverflowScrolling: 'auto',
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -127,77 +163,51 @@ const Philosophy = () => {
       style={{ backgroundColor: '#3a171a', height: `${PANELS * 100}vh` }}
     >
       {isMobile ? (
-        /* Mobile: full-screen image with text overlay */
-        <div
-          style={{
-            position: 'sticky',
-            top: 0,
-            height: '100vh',
-            overflow: 'hidden',
-          }}
-        >
+        <div style={stickyHeight}>
           {imageTrack}
 
-          {/* gradient overlay */}
           <div
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(to bottom, rgba(58,23,26,0.15) 30%, rgba(58,23,26,0.92) 100%)',
+              background: 'linear-gradient(to bottom, rgba(58,23,26,0.1) 25%, rgba(58,23,26,0.95) 100%)',
               pointerEvents: 'none',
             }}
           />
 
-          {/* text panels */}
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              padding: '2rem 1.5rem 3rem',
-              display: 'flex',
-              justifyContent: 'center',
-            }}
-          >
-            {textContents.map((content, i) => (
-              <div
-                key={i}
-                ref={el => { textPanelRefs.current[i] = el; }}
-                style={{
-                  position: 'absolute',
-                  bottom: '3rem',
-                  left: '1.5rem',
-                  right: '1.5rem',
-                  opacity: i === 0 ? 1 : 0,
-                  transform: i === 0 ? 'translateY(0)' : 'translateY(16px)',
-                  transition: 'opacity 0.5s ease, transform 0.5s ease',
-                  pointerEvents: i === 0 ? 'auto' : 'none',
-                  display: 'flex',
-                  justifyContent: 'center',
-                }}
-              >
-                {content}
-              </div>
-            ))}
-          </div>
+          {textContents.map((content, i) => (
+            <div
+              key={i}
+              ref={el => { textPanelRefs.current[i] = el; }}
+              style={{
+                position: 'absolute',
+                bottom: 'env(safe-area-inset-bottom, 0px)',
+                left: 0,
+                right: 0,
+                padding: '0 1.5rem 3rem',
+                display: 'flex',
+                justifyContent: 'center',
+                opacity: i === 0 ? 1 : 0,
+                transform: i === 0 ? 'translateY(0)' : 'translateY(16px)',
+                transition: 'opacity 0.5s ease, transform 0.5s ease',
+                pointerEvents: i === 0 ? 'auto' : 'none',
+              }}
+            >
+              {content}
+            </div>
+          ))}
         </div>
       ) : (
-        /* Desktop: side-by-side grid */
         <div
           style={{
-            position: 'sticky',
-            top: 0,
-            height: '100vh',
+            ...stickyHeight,
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
-            overflow: 'hidden',
           }}
         >
-          {/* Left: text */}
           <div
             style={{
-              height: '100vh',
+              height: 'var(--real-100vh, 100vh)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -223,8 +233,7 @@ const Philosophy = () => {
             ))}
           </div>
 
-          {/* Right: images */}
-          <div style={{ height: '100vh', overflow: 'hidden', position: 'relative' }}>
+          <div style={{ height: 'var(--real-100vh, 100vh)', overflow: 'hidden', position: 'relative' }}>
             {imageTrack}
           </div>
         </div>
