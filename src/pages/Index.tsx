@@ -9,7 +9,7 @@ import FinalCTA from '@/components/FinalCTA';
 
 const Index = () => {
   return (
-    <main className="overflow-x-hidden">
+    <main>
       <LanguageToggle />
       <Hero />
       <Philosophy />
@@ -19,8 +19,8 @@ const Index = () => {
       <Gallery />
       <FinalCTA />
 
-      <footer className="py-12 text-center bg-foreground">
-        <p className="luxury-label text-primary-foreground/60">
+      <footer className="py-12 text-center" style={{ backgroundColor: '#3a171a' }}>
+        <p className="luxury-label" style={{ color: 'var(--milk)', opacity: 0.9 }}>
           © 2025 Margarita Slavich. All rights reserved.
         </p>
       </footer>

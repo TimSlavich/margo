@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import ServiceModal from './ServiceModal';
-import wardrobeImg from '@/assets/service-wardrobe.jpg';
-import shoppingImg from '@/assets/service-shopping.jpg';
-import capsuleImg from '@/assets/service-capsule.jpg';
-import eventImg from '@/assets/service-event.jpg';
+import wardrobeImg from '@/assets/service-wardrobe.png';
+import shoppingImg from '@/assets/service-shopping.png';
+import capsuleImg from '@/assets/service-capsule.png';
+import eventImg from '@/assets/service-event.png';
+import mentoringImg from '@/assets/service-mentoring.png';
 
 interface Service {
   key: string;
@@ -18,7 +19,7 @@ const services: Service[] = [
   { key: 'shopping', image: shoppingImg, fromPrice: false },
   { key: 'capsule', image: capsuleImg, fromPrice: false },
   { key: 'event', image: eventImg, fromPrice: true },
-  { key: 'mentoring', image: eventImg, fromPrice: false },
+  { key: 'mentoring', image: mentoringImg, fromPrice: false },
 ];
 
 const ServiceCard = ({
@@ -36,31 +37,39 @@ const ServiceCard = ({
 
   return (
     <div
-      className="border border-border overflow-hidden cursor-pointer group bg-background h-full min-h-[19rem] flex flex-col"
+      className="border border-border overflow-hidden cursor-pointer group h-full min-h-[19rem] flex flex-col"
+      style={{ backgroundColor: '#FFF8E7' }}
       onClick={onToggle}
     >
       {/* Photo */}
-      <div className="overflow-hidden h-52">
+      <div className="overflow-hidden h-52 p-2 md:p-3">
         <img
           src={service.image}
           alt={t(`services.${service.key}.title`)}
           loading="lazy"
           className={`w-full h-full object-cover transition-transform duration-700 ease-out ${isOpen ? 'scale-[1.04]' : 'group-hover:scale-[1.02]'}`}
+          style={
+            service.key === 'shopping'
+              ? { objectPosition: '50% 30%' }
+              : service.key === 'mentoring'
+                ? { objectPosition: '50% 25%' }
+                : undefined
+          }
         />
       </div>
 
       {/* Header — always visible */}
       <div className="flex items-center justify-between px-6 py-4 min-h-[6rem]">
-        <h3 className="luxury-heading text-base md:text-lg leading-snug pr-3">
+        <h3 className="luxury-heading text-base md:text-lg leading-snug pr-3 text-black">
           {t(`services.${service.key}.title`)}
         </h3>
         <div className="flex items-center gap-3 shrink-0">
-          <span className="luxury-label text-muted-foreground text-[0.6rem] whitespace-nowrap">
+          <span className="luxury-label text-black text-[0.6rem] whitespace-nowrap">
             {service.fromPrice && `${t('services.from')} `}
             {formatPrice(Number(t(`services.${service.key}.price`)))}
           </span>
           <span
-            className="luxury-label text-muted-foreground text-base transition-transform duration-500"
+            className="luxury-label text-black text-base transition-transform duration-500"
             style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0)' }}
           >
             +
@@ -74,14 +83,14 @@ const ServiceCard = ({
         style={{ maxHeight: isOpen ? '600px' : '0', opacity: isOpen ? 1 : 0 }}
       >
         <div className="px-6 pb-7 border-t border-border pt-5">
-          <p className="luxury-body text-muted-foreground text-sm mb-6 leading-relaxed">
+          <p className="luxury-body text-black text-sm mb-6 leading-relaxed">
             {t(`services.${service.key}.desc`)}
           </p>
 
           <div className="flex items-center justify-between">
-            <p className="luxury-heading text-2xl">
+            <p className="luxury-heading text-2xl text-black">
               {service.fromPrice && (
-                <span className="luxury-label text-muted-foreground mr-2 align-middle">
+                <span className="luxury-label text-black mr-2 align-middle">
                   {t('services.from')}
                 </span>
               )}
@@ -122,9 +131,9 @@ const ServicesAndPricing = () => {
   const activeService = services.find((s) => s.key === modalKey);
 
   return (
-    <section className="py-24 md:py-40 px-6 md:px-16 lg:px-24 bg-foreground">
+    <section className="py-24 md:py-40 px-6 md:px-16 lg:px-24" style={{ backgroundColor: 'var(--milk)' }}>
       <div ref={ref} className={`fade-up ${isVisible ? 'visible' : ''} max-w-6xl mx-auto`}>
-        <p className="luxury-label text-primary-foreground/60 mb-16 text-center">{t('services.label')}</p>
+        <p className="luxury-label text-black mb-16 text-center">{t('services.label')}</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-5 items-start">
           {services.map((service, index) => (

@@ -74,8 +74,9 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
 
       {/* Modal — flex column so header+footer never scroll */}
       <div
-        className="relative z-10 flex flex-col w-full max-w-2xl bg-background border border-border"
+        className="relative z-10 flex flex-col w-full max-w-2xl border border-border"
         style={{
+          backgroundColor: 'var(--milk)',
           maxHeight: '90vh',
           opacity: visible ? 1 : 0,
           transform: visible ? 'translateY(0) scale(1)' : 'translateY(24px) scale(0.97)',
@@ -86,14 +87,14 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
         {/* Header — never scrolls */}
         <div className="flex-shrink-0 border-b border-border px-8 py-6 flex items-start justify-between gap-4">
           <div>
-            <p className="luxury-label text-muted-foreground mb-1">{t('services.label')}</p>
-            <h2 className="luxury-heading text-2xl md:text-3xl">
+            <p className="luxury-label text-black mb-1">{t('services.label')}</p>
+            <h2 className="luxury-heading text-2xl md:text-3xl text-black">
               {t(`services.${serviceKey}.title`)}
             </h2>
           </div>
           <button
             onClick={handleClose}
-            className="text-muted-foreground hover:text-foreground transition-colors duration-300 shrink-0 mt-1 text-2xl leading-none w-8 h-8 flex items-center justify-center"
+            className="text-black hover:opacity-70 transition-opacity duration-300 shrink-0 mt-1 text-2xl leading-none w-8 h-8 flex items-center justify-center"
             aria-label="Close"
           >
             ×
@@ -105,13 +106,13 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
           {/* For whom */}
           {details.for && details.for.length > 0 && (
             <div>
-              <p className="luxury-label text-muted-foreground mb-4">
+              <p className="luxury-label text-black mb-4">
                 {t('modal.for_whom')}
               </p>
               <ul className="space-y-3">
                 {details.for.map((item, i) => (
-                  <li key={i} className="luxury-body text-sm flex gap-3">
-                    <span className="text-muted-foreground shrink-0 mt-0.5">—</span>
+                  <li key={i} className="luxury-body text-sm flex gap-3 text-black">
+                    <span className="text-black shrink-0 mt-0.5">—</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -122,16 +123,16 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
           {/* Steps (single format) */}
           {details.steps && details.steps.length > 0 && (
             <div>
-              <p className="luxury-label text-muted-foreground mb-4">
+              <p className="luxury-label text-black mb-4">
                 {t('modal.steps')}
               </p>
               <ol className="space-y-3">
                 {details.steps.map((step, i) => (
-                  <li key={i} className="luxury-body text-sm flex gap-3">
+                  <li key={i} className="luxury-body text-sm flex gap-3 text-black">
                     <span className="luxury-label text-primary shrink-0 mt-0.5 tabular-nums">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span>{step}</span>
+                    <span className="text-black">{step}</span>
                   </li>
                 ))}
               </ol>
@@ -143,12 +144,12 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
             <div className="space-y-6">
               {details.online_steps && (
                 <div>
-                  <p className="luxury-label text-secondary-foreground mb-4">
+                  <p className="luxury-label text-black mb-4">
                     {t('modal.online')}
                   </p>
                   <ol className="space-y-3">
                     {details.online_steps.map((step, i) => (
-                      <li key={i} className="luxury-body text-sm flex gap-3">
+                      <li key={i} className="luxury-body text-sm flex gap-3 text-black">
                         <span className="luxury-label text-primary shrink-0 mt-0.5 tabular-nums">
                           {String(i + 1).padStart(2, '0')}
                         </span>
@@ -160,12 +161,12 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
               )}
               {details.offline_steps && (
                 <div>
-                  <p className="luxury-label text-secondary-foreground mb-4">
+                  <p className="luxury-label text-black mb-4">
                     {t('modal.offline')}
                   </p>
                   <ol className="space-y-3">
                     {details.offline_steps.map((step, i) => (
-                      <li key={i} className="luxury-body text-sm flex gap-3">
+                      <li key={i} className="luxury-body text-sm flex gap-3 text-black">
                         <span className="luxury-label text-primary shrink-0 mt-0.5 tabular-nums">
                           {String(i + 1).padStart(2, '0')}
                         </span>
@@ -181,22 +182,22 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
           {/* Format + Duration */}
           <div className="grid grid-cols-2 gap-6 pt-2 border-t border-border">
             <div>
-              <p className="luxury-label text-muted-foreground mb-1">{t('services.format')}</p>
-              <p className="luxury-body text-sm">{t(`services.${serviceKey}.format`)}</p>
+              <p className="luxury-label text-black mb-1">{t('services.format')}</p>
+              <p className="luxury-body text-sm text-black">{t(`services.${serviceKey}.format`)}</p>
             </div>
             <div>
-              <p className="luxury-label text-muted-foreground mb-1">{t('services.duration')}</p>
-              <p className="luxury-body text-sm">{t(`services.${serviceKey}.duration`)}</p>
+              <p className="luxury-label text-black mb-1">{t('services.duration')}</p>
+              <p className="luxury-body text-sm text-black">{t(`services.${serviceKey}.duration`)}</p>
             </div>
           </div>
 
           {/* Notes */}
           {details.notes && (
-            <div className="bg-secondary/20 border border-border px-6 py-5">
-              <p className="luxury-label text-muted-foreground mb-2">
+            <div className="px-6 py-5" style={{ backgroundColor: 'var(--milk)', border: '2px solid #3a171a' }}>
+              <p className="luxury-label text-black mb-2">
                 {t('modal.important')}
               </p>
-              <p className="luxury-body text-muted-foreground text-sm leading-relaxed">
+              <p className="luxury-body text-black text-sm leading-relaxed">
                 {details.notes}
               </p>
             </div>
@@ -205,9 +206,9 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
 
         {/* Footer — never scrolls */}
         <div className="flex-shrink-0 border-t border-border px-8 py-6 flex items-center justify-between gap-4">
-          <p className="luxury-heading text-2xl text-primary">
+          <p className="luxury-heading text-2xl text-black">
             {fromPrice && (
-              <span className="luxury-label text-muted-foreground mr-2 align-middle">
+              <span className="luxury-label text-black mr-2 align-middle">
                 {t('services.from')}
               </span>
             )}
@@ -215,7 +216,7 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
           </p>
           <a
             href="mailto:marharyta.slavych@gmail.com"
-            className="luxury-label border border-secondary/60 text-foreground px-8 py-3 tracking-[0.15em] transition-all duration-500 hover:bg-secondary hover:text-secondary-foreground shrink-0"
+            className="luxury-label border border-primary text-black px-8 py-3 tracking-[0.15em] transition-all duration-500 hover:bg-primary hover:text-primary-foreground shrink-0"
           >
             {t('services.inquire')}
           </a>

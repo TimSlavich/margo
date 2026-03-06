@@ -3,14 +3,15 @@
     "book": "Book a Consultation"
   },
   "hero": {
-    "name": "Margarita Slavich",
+    "surname": "slavich",
+    "firstName": "margarita",
     "title": "Personal Stylist",
-    "tagline": "A wardrobe that amplifies your personality and works as a system.",
+    "tagline": "a wardrobe that reflects you and works as a system",
     "cta": "Book a Free Consultation",
     "explore": "Explore"
   },
   "philosophy": {
-    "label": "Philosophy",
+    "label": "My approach",
     "heading": "Style is communication — before you say a word.",
     "p1": "Your wardrobe is an extension of who you are. It should feel supportive, empowering, and aligned with your life today. Clothing should support you — not overwhelm you. I believe in quality over quantity, strategy over impulse, and timeless style over fleeting trends.",
     "p2": "A stylist is not the person who says to throw away all your clothes — it is the person who will give a new life to your wardrobe. I truly believe it's a collaboration more than a service, because it requires commitment and trust to get the best results. It's about discovering your authentic visual language.",
@@ -217,7 +218,7 @@
     "important": "Important:"
   },
   "gallery": {
-    "label": "Selected Work"
+    "label": "Results"
   },
   "cta": {
     "heading": "Lets build a refined wardrobe that works.",

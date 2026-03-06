@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import experienceImage from '@/assets/experience.jpg';
+import experienceImage from '@/assets/experience.png';
 
 const Experience = () => {
   const { t } = useLanguage();
@@ -21,14 +21,15 @@ const Experience = () => {
         ref={ref}
         className={`fade-up ${isVisible ? 'visible' : ''} relative z-10 max-w-2xl mx-auto px-6 text-center`}
       >
-        <p className="luxury-label text-primary-foreground/70 mb-12">{t('experience.label')}</p>
+        <p className="luxury-label mb-12" style={{ color: 'var(--milk)', opacity: 0.9 }}>{t('experience.label')}</p>
 
         <div className="space-y-6">
           {themes.map((key, i) => (
             <p
               key={key}
-              className="luxury-heading text-xl md:text-3xl text-primary-foreground"
+              className="luxury-heading text-xl md:text-3xl"
               style={{
+                color: 'var(--milk)',
                 transitionDelay: `${i * 150}ms`,
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(15px)',
