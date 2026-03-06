@@ -57,6 +57,8 @@
 @layer base {
   html {
     background: #3a171a;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
   * {
@@ -76,12 +78,6 @@
   /* iOS Safari: 100vh includes browser chrome — use JS-set real height */
   .h-screen {
     height: var(--real-100vh, 100svh);
-  }
-
-  /* Smooth scrolling with momentum on iOS */
-  html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
