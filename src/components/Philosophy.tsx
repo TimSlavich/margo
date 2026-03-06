@@ -46,21 +46,41 @@ const Philosophy = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const staticText = (
+  const desktopText = (
     <div style={{ width: '100%', maxWidth: '26rem' }}>
       <p className="luxury-label mb-5 text-center" style={{ color: 'var(--milk)', opacity: 0.7 }}>
         {t('philosophy.label')}
       </p>
-      <h2 className="luxury-heading text-2xl md:text-4xl mb-8 text-center" style={{ color: 'var(--milk)' }}>
+      <h2 className="luxury-heading text-4xl mb-8 text-center" style={{ color: 'var(--milk)' }}>
         {t('philosophy.heading')}
       </h2>
-      <p className="luxury-body text-sm md:text-base text-justify mb-5" style={{ color: 'var(--milk)', lineHeight: 1.8 }}>
+      <p className="luxury-body text-base text-justify mb-5" style={{ color: 'var(--milk)', lineHeight: 1.8 }}>
         {t('philosophy.p1')}
       </p>
-      <p className="luxury-body text-sm md:text-base text-justify mb-10" style={{ color: 'var(--milk)', lineHeight: 1.8 }}>
+      <p className="luxury-body text-base text-justify mb-10" style={{ color: 'var(--milk)', lineHeight: 1.8 }}>
         {t('philosophy.p2')}
       </p>
-      <blockquote className="luxury-heading text-xl md:text-3xl italic text-center" style={{ color: 'var(--milk)', opacity: 0.9 }}>
+      <blockquote className="luxury-heading text-3xl italic text-center" style={{ color: 'var(--milk)', opacity: 0.9 }}>
+        "{t('philosophy.quote')}"
+      </blockquote>
+    </div>
+  );
+
+  const mobileText = (
+    <div style={{ width: '100%' }}>
+      <p className="luxury-label text-center" style={{ color: 'var(--milk)', opacity: 0.7, fontSize: '0.7rem', letterSpacing: '0.18em', marginBottom: '0.75rem' }}>
+        {t('philosophy.label')}
+      </p>
+      <h2 className="luxury-heading text-center" style={{ color: 'var(--milk)', fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1rem' }}>
+        {t('philosophy.heading')}
+      </h2>
+      <p className="luxury-body text-justify" style={{ color: 'var(--milk)', fontSize: '0.85rem', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+        {t('philosophy.p1')}
+      </p>
+      <p className="luxury-body text-justify" style={{ color: 'var(--milk)', fontSize: '0.85rem', lineHeight: 1.7, marginBottom: '1.1rem' }}>
+        {t('philosophy.p2')}
+      </p>
+      <blockquote className="luxury-heading italic text-center" style={{ color: 'var(--milk)', opacity: 0.9, fontSize: 'clamp(1.1rem, 5vw, 1.4rem)' }}>
         "{t('philosophy.quote')}"
       </blockquote>
     </div>
@@ -101,7 +121,7 @@ const Philosophy = () => {
       >
         {/* Left: sticky static text */}
         <div style={{ position: 'sticky', top: 0, height: '100svh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '4rem 3rem' }}>
-          {staticText}
+          {desktopText}
         </div>
 
         {/* Right: sticky stacked images */}
@@ -119,22 +139,24 @@ const Philosophy = () => {
         <div style={{ position: 'sticky', top: 0, height: '100svh', overflow: 'hidden' }}>
           {imageStack(mobileRefs)}
 
-          {/* Gradient */}
+          {/* Dark overlay for text readability */}
           <div style={{
             position: 'absolute', inset: 0, pointerEvents: 'none',
             zIndex: PANELS + 1,
-            background: 'linear-gradient(to bottom, rgba(58,23,26,0.05) 10%, rgba(58,23,26,0.65) 50%, rgba(58,23,26,0.97) 100%)',
+            background: 'rgba(58,23,26,0.55)',
           }} />
 
-          {/* Static text */}
+          {/* Centered text — no inner scroll */}
           <div style={{
-            position: 'absolute', bottom: 0, left: 0, right: 0,
+            position: 'absolute', inset: 0,
             zIndex: PANELS + 2,
-            padding: `0 1.5rem max(2rem, env(safe-area-inset-bottom))`,
-            overflowY: 'auto',
-            maxHeight: '70svh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            padding: `max(env(safe-area-inset-top), 2.5rem) 1.75rem max(env(safe-area-inset-bottom), 2.5rem)`,
           }}>
-            {staticText}
+            {mobileText}
           </div>
         </div>
       </div>
