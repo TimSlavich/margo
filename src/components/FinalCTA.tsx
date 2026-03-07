@@ -1,6 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import ctaImage from '@/assets/cta.png';
+import EmailLink from '@/components/EmailLink';
 
 const FinalCTA = () => {
   const { t } = useLanguage();
@@ -24,13 +25,12 @@ const FinalCTA = () => {
         </h2>
 
         <div className="flex flex-col items-center gap-4 w-full max-w-xs mx-auto">
-          <a
-            href="mailto:marharyta.slavych@gmail.com"
+          <EmailLink
             className="luxury-label px-10 py-3.5 tracking-[0.2em] transition-all duration-500 w-full text-center border hover:bg-[#3a171a] hover:text-[var(--milk)]"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
             {t('cta.email')}
-          </a>
+          </EmailLink>
 
           <a
             href="https://t.me/MSlavych"

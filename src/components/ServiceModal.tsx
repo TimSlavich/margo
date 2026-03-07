@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/contexts/LanguageContext';
+import EmailLink from '@/components/EmailLink';
 
 interface ServiceDetails {
   for: string[];
@@ -229,12 +230,12 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
             )}
             {formatPrice(Number(t(`services.${serviceKey}.price`)))}
           </p>
-          <a
-            href="mailto:marharyta.slavych@gmail.com"
+          <EmailLink
             className="luxury-label border border-primary text-black px-8 py-3 tracking-[0.15em] transition-all duration-500 hover:bg-primary hover:text-primary-foreground shrink-0"
+            service={t(`services.${serviceKey}.title`)}
           >
             {t('services.inquire')}
-          </a>
+          </EmailLink>
         </div>
       </div>
     </div>

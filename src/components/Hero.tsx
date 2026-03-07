@@ -1,6 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect, useState } from 'react';
 import heroImage from '@/assets/hero.png';
+import EmailLink from '@/components/EmailLink';
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -24,34 +25,42 @@ const Hero = () => {
         <div className="absolute inset-0 bg-foreground/35" />
       </div>
 
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+      <div className="absolute inset-0 z-10 flex flex-col items-center w-full px-4 sm:px-6 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
+        <div className="flex-1 w-full" />
         <div
-          className="transition-all duration-1500 ease-out"
+          className="flex-shrink-0 flex flex-col items-center justify-center w-full"
           style={{
             opacity: loaded ? 1 : 0,
             transform: loaded ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'opacity 1.5s ease-out, transform 1.5s ease-out',
           }}
         >
-          <p className="luxury-label mb-6 text-primary-foreground/80">{t('hero.title')}</p>
-          <h1 className="luxury-heading text-primary-foreground mb-6 flex flex-col items-center gap-0 leading-tight">
-            <span className="text-3xl md:text-5xl lg:text-6xl">{t('hero.surname')}</span>
-            <span className="text-4xl md:text-8xl lg:text-9xl">{t('hero.firstName')}</span>
+          <h1 className="hero-name text-primary-foreground flex flex-col items-center gap-0 leading-tight w-full text-center">
+            <span className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl block w-full text-center">{t('hero.surname')}</span>
+            <span className="relative inline-block text-5xl sm:text-6xl md:text-8xl lg:text-9xl">
+              {t('hero.firstName')}
+              <span className="luxury-label-cascadia absolute -bottom-4 right-0 text-primary-foreground/80 text-[0.6rem] sm:text-[0.6rem] md:text-xs whitespace-nowrap">
+                {t('hero.title')}
+              </span>
+            </span>
           </h1>
-          <p className="luxury-body text-primary-foreground/80 text-sm md:text-base max-w-md mx-auto mb-12">
-            {t('hero.tagline')}
-          </p>
-
-          <div className="flex flex-col items-center gap-6">
-            <a
-              href="mailto:marharyta.slavych@gmail.com"
-              className="luxury-label px-8 py-3 tracking-[0.2em] transition-all duration-500 border hover:bg-[#3a171a]"
+        </div>
+        <div className="flex-1 flex flex-col items-center w-full overflow-x-hidden min-h-0">
+          <div className="flex-1 flex items-center justify-center pt-0 sm:pt-16 md:pt-24 -mt-[7.5rem] sm:mt-0 text-center w-full">
+            <p className="luxury-label-cascadia text-primary-foreground/80 text-[0.75rem] sm:text-sm md:text-xl lg:text-2xl max-w-full text-center px-1 sm:whitespace-nowrap tracking-[0.04em] sm:tracking-normal" style={{ wordSpacing: '-0.01em' }}>
+              {t('hero.tagline')}
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-7 sm:gap-10 pb-16 sm:pb-20 flex-shrink-0">
+            <EmailLink
+              className="luxury-label-cascadia w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-3 tracking-[0.2em] transition-all duration-500 border hover:bg-[#3a171a] text-center"
               style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
             >
               {t('hero.cta')}
-            </a>
+            </EmailLink>
             <button
               onClick={scrollToPhilosophy}
-              className="luxury-label text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-500 flex items-center gap-2"
+              className="luxury-label-cascadia text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-500 flex items-center gap-2"
             >
               {t('hero.explore')} <span className="text-lg">↓</span>
             </button>
