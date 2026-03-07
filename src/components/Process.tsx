@@ -17,7 +17,7 @@ const ProcessStep = ({ step }: { step: number }) => {
         <span className="luxury-label" style={{ color: 'var(--milk)', opacity: 0.7 }}>0{step}</span>
       </div>
       <div className="col-span-10 md:col-span-4">
-        <h3 className="luxury-heading text-xl md:text-2xl" style={{ color: 'var(--milk)' }}>{t(`process.${step}.title`)}</h3>
+        <h3 className="luxury-body text-xl md:text-2xl uppercase" style={{ color: 'var(--milk)' }}>{t(`process.${step}.title`)}</h3>
       </div>
       <div className="col-span-10 col-start-3 md:col-span-5 md:col-start-7">
         <p className="luxury-body text-sm" style={{ color: 'var(--milk)', opacity: 0.9 }}>{t(`process.${step}.desc`)}</p>
@@ -34,7 +34,7 @@ const Process = () => {
     <section id="process" className="py-24 md:py-40 px-6 md:px-16 lg:px-24" style={{ backgroundColor: '#3a171a' }}>
       <div className="max-w-5xl mx-auto">
         <div ref={ref} className={`fade-up ${isVisible ? 'visible' : ''}`}>
-          <p className="luxury-label mb-16 text-center" style={{ color: 'var(--milk)', opacity: 0.8 }}>{t('process.label')}</p>
+          <p className="hero-name lowercase text-5xl sm:text-6xl md:text-8xl leading-tight text-center mb-16" style={{ color: 'var(--milk)', letterSpacing: '0.02em', transform: 'scaleY(1.15)', transformOrigin: 'center' }}>{t('process.label')}</p>
         </div>
         {steps.map((step) => (
           <ProcessStep key={step} step={step} />

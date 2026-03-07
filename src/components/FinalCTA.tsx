@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import ctaImage from '@/assets/cta.png';
+import ctaImage from '@/assets/cta.jpeg';
 import EmailLink from '@/components/EmailLink';
 
 const FinalCTA = () => {
@@ -8,7 +8,7 @@ const FinalCTA = () => {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
-    <section className="relative py-32 md:py-48 overflow-hidden">
+    <section className="relative pt-20 pb-20 sm:pt-20 sm:py-28 md:py-32 lg:py-48 overflow-hidden">
       <div
         className="absolute inset-0 parallax-bg"
         style={{ backgroundImage: `url(${ctaImage})` }}
@@ -18,15 +18,17 @@ const FinalCTA = () => {
 
       <div
         ref={ref}
-        className={`fade-up ${isVisible ? 'visible' : ''} relative z-10 max-w-2xl mx-auto px-6 text-center`}
+        className={`fade-up ${isVisible ? 'visible' : ''} relative z-10 max-w-2xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center`}
       >
-        <h2 className="luxury-heading text-3xl md:text-5xl mb-14" style={{ color: 'var(--milk)' }}>
-          {t('cta.heading')}
+        <h2 className="luxury-label-cascadia uppercase mb-10 sm:mb-14 sm:-mt-28 text-center flex flex-col gap-0 leading-tight text-base sm:text-lg md:text-xl lg:text-2xl" style={{ color: 'var(--milk)' }}>
+          {t('cta.heading').split(' | ').map((line, i) => (
+            <span key={i}>{line}</span>
+          ))}
         </h2>
 
-        <div className="flex flex-col items-center gap-4 w-full max-w-xs mx-auto">
+        <div className="flex flex-col items-center gap-3 sm:gap-4 w-full max-w-xs mx-auto mt-8 sm:mt-12">
           <EmailLink
-            className="luxury-label px-10 py-3.5 tracking-[0.2em] transition-all duration-500 w-full text-center border hover:bg-[#3a171a] hover:text-[var(--milk)]"
+            className="luxury-label-cascadia w-full px-6 py-3 tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
             {t('cta.email')}
@@ -36,7 +38,7 @@ const FinalCTA = () => {
             href="https://t.me/MSlavych"
             target="_blank"
             rel="noopener noreferrer"
-            className="luxury-label px-10 py-3.5 tracking-[0.2em] transition-all duration-500 w-full text-center border hover:bg-[#3a171a] hover:text-[var(--milk)]"
+            className="luxury-label-cascadia w-full px-6 py-3 tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
             {t('cta.telegram')} @MSlavych
@@ -46,7 +48,7 @@ const FinalCTA = () => {
             href="https://instagram.com/margarita.slavich"
             target="_blank"
             rel="noopener noreferrer"
-            className="luxury-label px-10 py-3.5 tracking-[0.2em] transition-all duration-500 w-full text-center border hover:bg-[#3a171a] hover:text-[var(--milk)]"
+            className="luxury-label-cascadia w-full px-6 py-3 tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
             {t('cta.instagram')} @margarita.slavich

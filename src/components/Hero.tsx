@@ -51,7 +51,7 @@ const Hero = () => {
               {t('hero.tagline')}
             </p>
           </div>
-          <div className="flex flex-col items-center gap-7 sm:gap-10 pb-16 sm:pb-20 flex-shrink-0">
+          <div className="flex flex-col items-center gap-7 sm:gap-10 pb-16 sm:pb-20 flex-shrink-0 mt-8 sm:mt-12">
             <EmailLink
               className="luxury-label-cascadia w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-3 tracking-[0.2em] transition-all duration-500 border hover:bg-[#3a171a] text-center"
               style={{ color: 'var(--milk)', borderColor: '#3a171a' }}

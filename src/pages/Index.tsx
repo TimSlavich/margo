@@ -19,8 +19,8 @@ const Index = () => {
       <Gallery />
       <FinalCTA />
 
-      <footer className="py-12 text-center" style={{ backgroundColor: '#3a171a' }}>
-        <p className="luxury-label" style={{ color: 'var(--milk)', opacity: 0.9 }}>
+      <footer className="py-4 text-center" style={{ backgroundColor: '#3a171a' }}>
+        <p className="luxury-body text-sm sm:text-base" style={{ color: 'var(--milk)', letterSpacing: '0.06em', textTransform: 'lowercase' }}>
           © 2025 Margarita Slavich. All rights reserved.
         </p>
       </footer>

@@ -255,7 +255,7 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
         </div>
 
         {/* Footer — never scrolls */}
-        <div className="flex-shrink-0 border-t border-border px-8 py-6 flex items-center justify-between gap-4"
+        <div className="flex-shrink-0 border-t border-border px-8 py-6 flex items-center justify-between gap-4 mt-4"
           style={{ paddingBottom: 'max(1.5rem, calc(env(safe-area-inset-bottom) + 1rem))' }}
         >
           <p className="luxury-body text-2xl text-black">

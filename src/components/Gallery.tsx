@@ -1,12 +1,12 @@
 import { useState, useCallback } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import galleryTestimonial1 from '@/assets/gallery-testimonial-1.png';
-import galleryTestimonial2 from '@/assets/gallery-testimonial-2.png';
-import galleryTestimonial3 from '@/assets/gallery-testimonial-3.png';
-import galleryTestimonial4 from '@/assets/gallery-testimonial-4.png';
+import galleryTestimonial1 from '@/assets/gallery-testimonial-1.jpeg';
+import galleryTestimonial2 from '@/assets/gallery-testimonial-2.jpeg';
+import galleryTestimonial3 from '@/assets/gallery-testimonial-3.jpeg';
+import galleryTestimonial4 from '@/assets/gallery-testimonial-4.jpeg';
 import galleryTestimonial5 from '@/assets/gallery-testimonial-5.png';
-import galleryTestimonial6 from '@/assets/gallery-testimonial-6.png';
+import galleryTestimonial6 from '@/assets/gallery-testimonial-6.jpeg';
 import galleryTestimonial7 from '@/assets/gallery-testimonial-7.jpg';
 import galleryTestimonial8 from '@/assets/gallery-testimonial-8.png';
 import galleryTestimonial9 from '@/assets/gallery-testimonial-9.png';
@@ -76,9 +76,9 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-16 sm:py-20 md:py-24 lg:py-32 px-0 sm:px-6 md:px-12 lg:px-24" style={{ backgroundColor: 'var(--milk)' }}>
+    <section id="gallery" className="pt-8 pb-16 sm:pt-10 sm:pb-20 md:pt-12 md:pb-24 lg:pt-16 lg:pb-32 px-0 sm:px-6 md:px-12 lg:px-24" style={{ backgroundColor: 'var(--milk)' }}>
       <div className="max-w-7xl mx-auto">
-        <p className="luxury-label text-black mb-10 sm:mb-12 md:mb-16 text-center px-4">{t('gallery.label')}</p>
+        <p className="hero-name lowercase text-3xl sm:text-4xl md:text-5xl leading-tight text-center mb-10 sm:mb-12 md:mb-16 px-4" style={{ color: '#3a171a', letterSpacing: '0.02em', transform: 'scaleY(1.15)', transformOrigin: 'center' }}>{t('gallery.label')}</p>
 
         <div
           className="md:hidden relative flex items-center justify-center gap-2 sm:gap-3 px-4"

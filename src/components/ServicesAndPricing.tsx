@@ -60,17 +60,17 @@ const ServiceCard = ({
 
       {/* Header — always visible */}
       <div className="flex items-center justify-between px-6 py-4 min-h-[6rem]">
-        <h3 className="luxury-body text-base md:text-lg leading-snug pr-3 text-black uppercase">
+        <h3 className="luxury-body text-base md:text-lg leading-snug pr-3 uppercase" style={{ color: '#3a171a' }}>
           {t(`services.${service.key}.title`)}
         </h3>
         <div className="flex items-center gap-3 shrink-0">
-          <span className="luxury-body text-black text-base md:text-lg whitespace-nowrap">
+          <span className="luxury-body text-base md:text-lg whitespace-nowrap" style={{ color: '#3a171a' }}>
             {service.fromPrice && `${t('services.from')} `}
             {formatPrice(Number(t(`services.${service.key}.price`)))}
           </span>
           <span
-            className="luxury-body text-black text-base transition-transform duration-500"
-            style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0)' }}
+            className="luxury-body text-base transition-transform duration-500"
+            style={{ color: '#3a171a', transform: isOpen ? 'rotate(45deg)' : 'rotate(0)' }}
           >
             +
           </span>
@@ -87,10 +87,10 @@ const ServiceCard = ({
             {t(`services.${service.key}.desc`)}
           </p>
 
-          <div className="flex items-center justify-between">
-            <p className="luxury-body text-2xl text-black">
+          <div className="flex items-center justify-between mt-4">
+            <p className="luxury-body text-2xl" style={{ color: '#3a171a' }}>
               {service.fromPrice && (
-                <span className="luxury-body text-black mr-2 align-middle">
+                <span className="luxury-body mr-2 align-middle" style={{ color: '#3a171a' }}>
                   {t('services.from')}
                 </span>
               )}
@@ -132,12 +132,26 @@ const ServicesAndPricing = () => {
   const activeService = services.find((s) => s.key === modalKey);
 
   return (
-    <section className="pt-16 pb-24 md:pt-20 md:pb-40 px-6 md:px-16 lg:px-24" style={{ backgroundColor: 'var(--milk)' }}>
-      <div ref={ref} className={`fade-up ${isVisible ? 'visible' : ''} max-w-6xl mx-auto`}>
-        <p className="hero-name uppercase text-5xl sm:text-6xl md:text-8xl leading-tight text-center mb-16" style={{ color: '#3a171a', letterSpacing: '0.02em', transform: 'scaleY(1.15)', transformOrigin: 'center' }}>
-          {t('services.label')}
-        </p>
+    <section id="services" className="pt-16 pb-24 md:pt-20 md:pb-40" style={{ backgroundColor: 'var(--milk)' }}>
+      <div ref={ref} className={`fade-up ${isVisible ? 'visible' : ''}`}>
+        <div className="overflow-hidden w-full mb-16">
+          <div className="marquee-scroll flex whitespace-nowrap w-max">
+            {Array.from({ length: 16 }).map((_, i) => (
+              <span key={i} className="luxury-body uppercase text-5xl sm:text-6xl md:text-8xl leading-tight inline-flex items-center" style={{ color: '#3a171a', letterSpacing: '0.02em', transform: 'scaleY(1.2)', transformOrigin: 'center' }}>
+                <span style={{ padding: '0 0.4em' }}>{t('services.label')}</span>
+                <span style={{ color: '#3a171a' }}>·</span>
+              </span>
+            ))}
+            {Array.from({ length: 16 }).map((_, i) => (
+              <span key={`clone-${i}`} className="luxury-body uppercase text-5xl sm:text-6xl md:text-8xl leading-tight inline-flex items-center" style={{ color: '#3a171a', letterSpacing: '0.02em', transform: 'scaleY(1.2)', transformOrigin: 'center' }}>
+                <span style={{ padding: '0 0.4em' }}>{t('services.label')}</span>
+                <span style={{ color: '#3a171a' }}>·</span>
+              </span>
+            ))}
+          </div>
+        </div>
 
+        <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-5 items-start">
           {services.map((service, index) => (
             <div
@@ -155,6 +169,7 @@ const ServicesAndPricing = () => {
               />
             </div>
           ))}
+        </div>
         </div>
       </div>
 
