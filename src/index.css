@@ -137,6 +137,10 @@
     text-transform: none !important;
   }
 
+  .hero-name.uppercase {
+    text-transform: uppercase !important;
+  }
+
   .underline-grow {
     @apply relative inline-block;
   }

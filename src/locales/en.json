@@ -25,13 +25,13 @@
     "from": "from",
     "format": "Format",
     "duration": "Timeline",
-    "inquire": "Book this service",
+    "inquire": "Contact me to book",
     "details": "Learn more",
     "wardrobe": {
       "title": "Wardrobe Audit",
       "desc": "You often find yourself staring at a full closet but still feel like you have nothing to wear. We go through every piece together, build outfit formulas, and create a shopping list for the missing essentials.",
       "format": "Online / Offline",
-      "duration": "Offline: up to 4 hrs (each additional hour + SGD 100). Online: 15 business days",
+      "duration": "Online - 15 business days. Offline - up to 4 hrs (each additional hour + S$ 100)",
       "price": "600",
       "details": {
         "for": [
@@ -61,7 +61,7 @@
       "title": "Shopping curation",
       "desc": "A service designed to complement your existing wardrobe with new items, helping to create a fully functional wardrobe or building one from scratch for the season. Please note: this service is only offered after we have completed a wardrobe revamp. If you want to create a wardrobe from scratch, please refer to the Capsule Wardrobe service.",
       "format": "Online / Offline",
-      "duration": "Online: 7–10 business days. Offline: up to 4 hrs (each additional hour + SGD 100)",
+      "duration": "Online: 7–10 business days. Offline: up to 4 hrs (each additional hour + S$ 100)",
       "price": "600",
       "details": {
         "for": [
@@ -80,7 +80,7 @@
           "We create a list of items relevant to your needs and style direction.",
           "Plan and secure the date.",
           "I do a pre-shopping for your convenience and to save time.",
-          "We combine offline and online purchases due to limited stock and sizing. The offline session takes up to 4 hours (every hour after will cost 100 SGD).",
+          "We combine offline and online purchases due to limited stock and sizing. The offline session takes up to 4 hours (every hour after will cost 100 S$).",
           "You also have 2 extra weeks to ask me any questions that arise about the wardrobe review, new pieces, or any wardrobe-related issues."
         ],
         "notes": "Be aware that: Each item selected can be replaced once within 2 weeks. Buying many items at once can be mentally challenging due to the high cost. If it's hard to buy everything at once, follow the list when possible and focus on the details such as material, length, and cut I selected previously. P.S. Working with a stylist can be overwhelming due to the volume of new information. Give yourself time and everything will work out :) This service is a combined approach due to the specifics of shopping in Singapore. For mass-market and mid-range items, I would recommend ordering online from my curated selections and trying the items at home (via video, photos, or an in-person visit) due to the limitations of store availability. For luxury items, you have the option to select the shopping method you prefer. Nonetheless, online shopping usually provides a better range and selection, making it easier to find unique and special items with the convenience of home fitting. If this option isn't suitable, I will create a shopping route, reserve items in offline stores and showrooms, and assist you in selecting items. I respect your time and aim to offer the best service possible."
@@ -112,7 +112,7 @@
       }
     },
     "event": {
-      "title": "Event / photoshoot looks",
+      "title": "Event / shoot looks",
       "desc": "For any event where you need to look your best and feel confident — be it a wedding, a public appearance, or a formal gathering — we'll create the perfect outfit.",
       "format": "Online / Offline",
       "duration": "Varies by complexity",
@@ -127,15 +127,15 @@
           "I will then put together 3 outfit options considering the theme and dress code of the event and send those choices for you to pick the best one.",
           "The outfit can either be assembled from your current wardrobe or include new items and accessories tailored for your event."
         ],
-        "notes": "The price for this service varies depending on the complexity of the outfit and the work format. From 250 SGD per outfit."
+        "notes": "The price for this service varies depending on the complexity of the outfit and the work format. From 250 S$ per outfit."
       }
     },
     "mentoring": {
       "title": "Monthly Mentoring",
       "desc": "Direct access to your stylist. Price: S$350/month or S$300/month for a 3-month subscription.",
       "format": "Online",
-      "duration": "1 month",
-      "price": "350",
+      "duration": "S$ 120 / week. S$ 350 / month",
+      "price": "120",
       "details": {
         "for": [
           "You've already worked with me and want consistent support to maintain and grow your style.",
@@ -178,15 +178,15 @@
   },
   "pricing": {
     "label": "Pricing",
-    "note": "All prices in SGD. Each additional hour billed separately.",
+    "note": "All prices in S$. Each additional hour billed separately.",
     "wardrobe_audit": {
       "title": "Wardrobe Audit",
-      "desc": "Offline (up to 4 hrs, each extra hour + SGD 100) or online (15 business days)",
+      "desc": "Offline (up to 4 hrs, each extra hour + S$ 100) or online (15 business days)",
       "price": "600"
     },
     "shopping": {
       "title": "Shopping Assistance",
-      "desc": "Personal shopping day offline (up to 4 hrs, + SGD 100/hr) or online curation (7–10 business days)",
+      "desc": "Personal shopping day offline (up to 4 hrs, + S$ 100/hr) or online curation (7–10 business days)",
       "price": "600"
     },
     "travel_capsule": {

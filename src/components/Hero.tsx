@@ -45,8 +45,8 @@ const Hero = () => {
             </span>
           </h1>
         </div>
-        <div className="flex-1 flex flex-col items-center w-full overflow-x-hidden min-h-0">
-          <div className="flex-1 flex items-center justify-center pt-0 sm:pt-16 md:pt-24 -mt-[7.5rem] sm:mt-0 text-center w-full">
+        <div className="flex-1 flex flex-col items-center justify-between w-full overflow-x-hidden min-h-0">
+          <div className="flex-1 flex items-center justify-center text-center w-full min-h-0 -mt-[8rem] sm:mt-0">
             <p className="luxury-label-cascadia text-primary-foreground/80 text-[0.75rem] sm:text-sm md:text-xl lg:text-2xl max-w-full text-center px-1 sm:whitespace-nowrap tracking-[0.04em] sm:tracking-normal" style={{ wordSpacing: '-0.01em' }}>
               {t('hero.tagline')}
             </p>

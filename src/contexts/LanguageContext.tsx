@@ -26,11 +26,11 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     } catch {}
   };
 
-  const currencySymbol = language === 'en' ? 'SGD' : '$';
+  const currencySymbol = language === 'en' ? 'S$' : '$';
   const currency = language === 'en' ? 'SGD' : 'USD';
 
   const formatPrice = (amount: number): string =>
-    language === 'en' ? `SGD ${amount}` : `$${amount}`;
+    language === 'en' ? `S$ ${amount}` : `$${amount}`;
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t, currency, currencySymbol, formatPrice }}>
