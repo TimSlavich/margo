@@ -1,163 +1,137 @@
-import { useEffect, useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import philosophyImage from '@/assets/philosophy.png';
-import philosophy1 from '@/assets/philosophy-1.png';
-import philosophy2 from '@/assets/philosophy-2.png';
-
-const IMAGES = [philosophyImage, philosophy1, philosophy2];
-const PANELS = 3;
-const SCROLL_UNITS = 4;
 
 const Philosophy = () => {
   const { t } = useLanguage();
-  const sectionRef = useRef<HTMLElement>(null);
-  const desktopRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const mobileRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const currentIndex = useRef(0);
 
-  useEffect(() => {
-    const applyIndex = (index: number) => {
-      [desktopRefs, mobileRefs].forEach(group => {
-        group.current.forEach((el, i) => {
-          if (!el) return;
-          el.style.transform = i <= index ? 'translateY(0)' : 'translateY(100%)';
-        });
-      });
-    };
-
-    // Устанавливаем начальное состояние
-    applyIndex(0);
-
-    const handleScroll = () => {
-      const section = sectionRef.current;
-      if (!section) return;
-      const { top, height } = section.getBoundingClientRect();
-      const scrolled = -top;
-      if (scrolled < 0 || scrolled > height) return;
-
-      const index = Math.min(PANELS - 1, Math.floor(scrolled / (height / SCROLL_UNITS)));
-      if (index === currentIndex.current) return;
-      currentIndex.current = index;
-      applyIndex(index);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const desktopText = (
-    <div style={{ width: '100%', maxWidth: '26rem' }}>
-      <p className="luxury-label mb-5 text-center" style={{ color: 'var(--milk)', opacity: 0.7 }}>
-        {t('philosophy.label')}
-      </p>
-      <h2 className="luxury-heading text-4xl mb-8 text-center" style={{ color: 'var(--milk)' }}>
-        {t('philosophy.heading')}
-      </h2>
-      <p className="luxury-body text-base text-justify mb-5" style={{ color: 'var(--milk)', lineHeight: 1.8 }}>
+  const desktopParagraphs = (
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <p className="luxury-body text-base text-justify" style={{ color: 'var(--milk)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
         {t('philosophy.p1')}
       </p>
-      <p className="luxury-body text-base text-justify mb-10" style={{ color: 'var(--milk)', lineHeight: 1.8 }}>
+      <p className="luxury-body text-base text-justify" style={{ color: 'var(--milk)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
         {t('philosophy.p2')}
       </p>
-      <blockquote className="luxury-heading text-3xl italic text-center" style={{ color: 'var(--milk)', opacity: 0.9 }}>
-        "{t('philosophy.quote')}"
-      </blockquote>
+      <p className="luxury-body text-base text-justify" style={{ color: 'var(--milk)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+        {t('philosophy.p3')}
+      </p>
+      <p className="luxury-body text-base text-justify" style={{ color: 'var(--milk)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+        {t('philosophy.p4')}
+      </p>
+      <p className="luxury-body text-base text-justify" style={{ color: 'var(--milk)', lineHeight: 1.8 }}>
+        {t('philosophy.p5')}
+      </p>
+    </div>
+  );
+
+  const desktopQuote = (
+    <blockquote className="hero-name quote-sentence-case text-center" style={{ color: 'var(--milk)', opacity: 0.9, marginTop: 'auto', paddingTop: '6rem', width: '100%', marginInline: 'auto', fontSize: 'clamp(0.65rem, 1.2vw, 0.75rem)' }}>
+      <span className="hidden xl:inline whitespace-nowrap">"{t('philosophy.quote')}"</span>
+      <span className="xl:hidden">
+        "{t('philosophy.quote').split('. ').map((part, i) => (
+          <span key={i}>{i > 0 && <br />}{part}{i === 0 ? '.' : ''}</span>
+        ))}"
+      </span>
+    </blockquote>
+  );
+
+  const desktopContent = (
+    <div style={{ width: '100%', maxWidth: '36rem', alignSelf: 'center', display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
+      {desktopParagraphs}
+      {desktopQuote}
     </div>
   );
 
   const mobileText = (
-    <div style={{ width: '100%' }}>
-      <p className="luxury-label text-center" style={{ color: 'var(--milk)', opacity: 0.7, fontSize: '0.7rem', letterSpacing: '0.18em', marginBottom: '0.75rem' }}>
-        {t('philosophy.label')}
-      </p>
-      <h2 className="luxury-heading text-center" style={{ color: 'var(--milk)', fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1rem' }}>
-        {t('philosophy.heading')}
-      </h2>
-      <p className="luxury-body text-justify" style={{ color: 'var(--milk)', fontSize: '0.85rem', lineHeight: 1.7, marginBottom: '0.75rem' }}>
-        {t('philosophy.p1')}
-      </p>
-      <p className="luxury-body text-justify" style={{ color: 'var(--milk)', fontSize: '0.85rem', lineHeight: 1.7, marginBottom: '1.1rem' }}>
-        {t('philosophy.p2')}
-      </p>
-      <blockquote className="luxury-heading italic text-center" style={{ color: 'var(--milk)', opacity: 0.9, fontSize: 'clamp(1.1rem, 5vw, 1.4rem)' }}>
-        "{t('philosophy.quote')}"
+    <>
+      <div style={{ width: '100%', maxWidth: '20rem', margin: '0 auto' }}>
+        <p className="luxury-body text-justify" style={{ color: 'var(--milk)', fontSize: 'clamp(0.8rem, 3.5vw, 0.9rem)', lineHeight: 1.75, marginBottom: '1.1rem' }}>
+          {t('philosophy.p1')}
+        </p>
+        <p className="luxury-body text-justify" style={{ color: 'var(--milk)', fontSize: 'clamp(0.8rem, 3.5vw, 0.9rem)', lineHeight: 1.75, marginBottom: '1.1rem' }}>
+          {t('philosophy.p2')}
+        </p>
+        <p className="luxury-body text-justify" style={{ color: 'var(--milk)', fontSize: 'clamp(0.8rem, 3.5vw, 0.9rem)', lineHeight: 1.75, marginBottom: '1.1rem' }}>
+          {t('philosophy.p3')}
+        </p>
+        <p className="luxury-body text-justify" style={{ color: 'var(--milk)', fontSize: 'clamp(0.8rem, 3.5vw, 0.9rem)', lineHeight: 1.75, marginBottom: '1.1rem' }}>
+          {t('philosophy.p4')}
+        </p>
+        <p className="luxury-body text-justify" style={{ color: 'var(--milk)', fontSize: 'clamp(0.8rem, 3.5vw, 0.9rem)', lineHeight: 1.75, marginBottom: '1.5rem' }}>
+          {t('philosophy.p5')}
+        </p>
+      </div>
+      <blockquote className="hero-name quote-sentence-case text-center" style={{ color: 'var(--milk)', opacity: 0.9, fontSize: 'clamp(0.6rem, 2.5vw, 0.75rem)', marginTop: '4rem', paddingBottom: '0.5rem', width: '100%' }}>
+        "{t('philosophy.quote').split('. ').map((part, i) => (
+          <span key={i}>{i > 0 && <br />}{part}{i === 0 ? '.' : ''}</span>
+        ))}"
       </blockquote>
-    </div>
+    </>
   );
 
-  const imageStack = (refs: React.MutableRefObject<(HTMLDivElement | null)[]>) => (
-    <div style={{ position: 'absolute', inset: 0 }}>
-      {IMAGES.map((src, i) => (
-        <div
-          key={i}
-          ref={el => { refs.current[i] = el; }}
-          style={{
-            position: 'absolute', inset: 0,
-            transform: i === 0 ? 'translateY(0)' : 'translateY(100%)',
-            transition: 'transform 0.8s cubic-bezier(0.76, 0, 0.24, 1)',
-            willChange: 'transform',
-            zIndex: i + 1,
-          }}
-        >
-          <img
-            src={src}
-            alt=""
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-            loading={i === 0 ? 'eager' : 'lazy'}
-          />
-        </div>
-      ))}
+  const imageBlock = (
+    <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
+      <img
+        src={philosophyImage}
+        alt=""
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '75% center', display: 'block' }}
+        loading="eager"
+      />
     </div>
   );
 
   return (
-    <section ref={sectionRef} id="philosophy" style={{ backgroundColor: '#3a171a' }}>
+    <section id="philosophy" style={{ backgroundColor: '#3a171a', overflowX: 'hidden' }}>
 
       {/* ── DESKTOP ── */}
-      <div
-        className="hidden md:grid"
-        style={{ gridTemplateColumns: '1fr 1fr', minHeight: `calc(${SCROLL_UNITS} * 100svh)` }}
-      >
-        {/* Left: sticky static text */}
-        <div style={{ position: 'sticky', top: 0, height: '100svh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '4rem 3rem' }}>
-          {desktopText}
+      <div className="hidden md:grid" style={{ gridTemplateColumns: '1fr 1fr', minHeight: '100svh', width: '100%' }}>
+        <div style={{ position: 'sticky', top: 0, height: '100svh', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'center', padding: '4rem 3rem', overflow: 'hidden', minWidth: 0 }}>
+          <p className="luxury-body mb-16 text-center text-8xl uppercase leading-tight whitespace-nowrap px-1" style={{ color: 'var(--milk)', opacity: 0.7, letterSpacing: '0.02em', transform: 'scaleY(1.2)', transformOrigin: 'center', marginTop: '1rem', marginBottom: '-5rem' }}>
+            {t('philosophy.label')}
+          </p>
+          {desktopContent}
         </div>
-
-        {/* Right: sticky stacked images */}
-        <div style={{ position: 'sticky', top: 0, height: '100svh', overflow: 'hidden' }}>
-          {imageStack(desktopRefs)}
+        <div style={{ position: 'sticky', top: 0, height: '100svh', width: '100%', overflow: 'hidden', minWidth: 0, backgroundColor: '#3a171a' }}>
+          {imageBlock}
         </div>
       </div>
 
       {/* ── MOBILE ── */}
-      <div
-        className="md:hidden"
-        style={{ minHeight: `calc(${SCROLL_UNITS} * 100svh)`, position: 'relative' }}
-      >
-        {/* Sticky wrapper */}
-        <div style={{ position: 'sticky', top: 0, height: '100svh', overflow: 'hidden' }}>
-          {imageStack(mobileRefs)}
-
-          {/* Dark overlay for text readability */}
-          <div style={{
-            position: 'absolute', inset: 0, pointerEvents: 'none',
-            zIndex: PANELS + 1,
-            background: 'rgba(58,23,26,0.55)',
-          }} />
-
-          {/* Centered text — no inner scroll */}
-          <div style={{
-            position: 'absolute', inset: 0,
-            zIndex: PANELS + 2,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-            padding: `max(env(safe-area-inset-top), 2.5rem) 1.75rem max(env(safe-area-inset-bottom), 2.5rem)`,
-          }}>
-            {mobileText}
-          </div>
+      <div className="md:hidden">
+        <div
+          className="pt-[max(env(safe-area-inset-top),3.5rem)] px-4 pb-10"
+          style={{ width: '100%', overflow: 'hidden' }}
+        >
+          <p className="luxury-body text-center text-5xl sm:text-6xl uppercase leading-tight" style={{ color: 'var(--milk)', opacity: 0.7, letterSpacing: '0.02em', transform: 'scaleY(1.15)', transformOrigin: 'center' }}>
+            {t('philosophy.label')}
+          </p>
+        </div>
+        <div
+          style={{
+            padding: '0 1.5rem 3rem',
+          }}
+        >
+          {mobileText}
+        </div>
+        <div style={{ position: 'relative', marginTop: '-1px', paddingBottom: 'env(safe-area-inset-bottom, 0)' }}>
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '35%',
+              background: 'linear-gradient(to bottom, #3a171a 0%, rgba(58,23,26,0.6) 40%, transparent 100%)',
+              zIndex: 1,
+              pointerEvents: 'none',
+            }}
+          />
+          <img
+            src={philosophyImage}
+            alt=""
+            style={{ width: '100%', display: 'block', objectFit: 'cover', objectPosition: '75% center', minHeight: '50vh' }}
+            loading="lazy"
+          />
         </div>
       </div>
 

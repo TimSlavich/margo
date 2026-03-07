@@ -133,6 +133,10 @@
     text-transform: lowercase !important;
   }
 
+  .hero-name.quote-sentence-case {
+    text-transform: none !important;
+  }
+
   .underline-grow {
     @apply relative inline-block;
   }

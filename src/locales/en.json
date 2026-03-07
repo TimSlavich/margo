@@ -11,11 +11,14 @@
     "explore": "Explore"
   },
   "philosophy": {
-    "label": "My approach",
-    "heading": "Style is communication — before you say a word.",
-    "p1": "Your wardrobe is an extension of who you are. It should feel supportive, empowering, and aligned with your life today. Clothing should support you — not overwhelm you. I believe in quality over quantity, strategy over impulse, and timeless style over fleeting trends.",
-    "p2": "A stylist is not the person who says to throw away all your clothes — it is the person who will give a new life to your wardrobe. I truly believe it's a collaboration more than a service, because it requires commitment and trust to get the best results. It's about discovering your authentic visual language.",
-    "quote": "Style is your quiet power."
+    "label": "About me",
+    "heading": "Style is communication|before you say a word",
+    "p1": "My name is Margarita, and I'm a personal stylist.",
+    "p2": "For me, style is about confidence, comfort, and authenticity. It's the connection between how you feel inside and how you present yourself to the world.",
+    "p3": "I enjoy helping people unlock their potential through style and believe it can become a powerful tool of self-expression.",
+    "p4": "Rather than encouraging impulsive purchases, I focus on thoughtful styling and the potential of well-chosen wardrobe pieces.",
+    "p5": "For over 4 years, I've been working as a personal stylist. I've also styled photoshoots and previously created my own brand of leather bags and accessories.",
+    "quote": "Style is communication before you say a word. It is your quiet power."
   },
   "services": {
     "label": "Services",
