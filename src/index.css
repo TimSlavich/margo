@@ -179,6 +179,12 @@
     background-size: cover;
   }
 
+  @media (max-width: 768px) {
+    .parallax-bg {
+      background-attachment: scroll;
+    }
+  }
+  
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
