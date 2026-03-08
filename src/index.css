@@ -184,7 +184,13 @@
       background-attachment: scroll;
     }
   }
-  
+
+  @supports (-webkit-touch-callout: none) {
+    .parallax-bg {
+      background-attachment: scroll;
+    }
+  }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
