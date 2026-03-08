@@ -5,7 +5,7 @@ const Experience = () => {
   const bgRef = useParallax(0.2);
 
   return (
-    <section id="experience" className="relative py-40 md:py-60 lg:py-80 overflow-hidden" style={{ backgroundColor: '#1a0a0b' }}>
+    <section id="experience" className="relative py-28 md:py-60 lg:py-80 overflow-hidden" style={{ backgroundColor: '#1a0a0b' }}>
       <div
         ref={bgRef}
         className="parallax-bg"
