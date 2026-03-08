@@ -128,7 +128,7 @@ const ServicesAndPricing = ({
   const activeService = services.find((s) => s.key === modalKey);
 
   return (
-    <section id="services" className="pt-16 pb-24 md:pt-20 md:pb-40" style={{ backgroundColor: 'var(--milk)' }}>
+    <section id="services" className="pt-16 pb-24 md:pt-20 md:pb-40" style={{ backgroundColor: 'var(--milk)', marginTop: '-1px' }}>
       <div ref={ref} className={`fade-up ${isVisible ? 'visible' : ''}`}>
         <div className="overflow-hidden w-full mb-16">
           <div className="marquee-scroll flex whitespace-nowrap w-max">
