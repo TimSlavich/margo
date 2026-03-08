@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden" style={{ backgroundColor: '#1a0a0b' }}>
       <div
         ref={bgRef}
         className="parallax-bg"

@@ -10,7 +10,7 @@ const FinalCTA = () => {
   const bgRef = useParallax(0.2, -320);
 
   return (
-    <section className="relative pt-20 pb-20 sm:pt-20 sm:py-28 md:py-32 lg:py-48 overflow-hidden">
+    <section className="relative pt-20 pb-20 sm:pt-20 sm:py-28 md:py-32 lg:py-48 overflow-hidden" style={{ backgroundColor: '#3a171a' }}>
       <div
         ref={bgRef}
         className="parallax-bg"
