@@ -14,7 +14,7 @@ const ProcessStep = ({ step }: { step: number }) => {
       style={{ borderColor: 'rgba(242, 227, 208, 0.3)' }}
     >
       <div className="col-span-2 md:col-span-1">
-        <span className="luxury-label" style={{ color: 'var(--milk)', opacity: 0.7 }}>0{step}</span>
+        <span className="luxury-label-cascadia tabular-nums" style={{ color: 'var(--milk)', opacity: 0.7 }}>0{step}</span>
       </div>
       <div className="col-span-10 md:col-span-4">
         <h3 className="luxury-body text-xl md:text-2xl uppercase" style={{ color: 'var(--milk)' }}>{t(`process.${step}.title`)}</h3>
