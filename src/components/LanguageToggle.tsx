@@ -14,19 +14,27 @@ const LanguageToggle = () => {
     const lightSections = ['services', 'gallery', 'philosophy'].map((id) => document.getElementById(id)).filter(Boolean);
     if (!toggle || lightSections.length === 0) return;
 
+    let rafId: number | null = null;
+
     const check = () => {
       const tr = toggle.getBoundingClientRect();
       const overLight = lightSections.some((el) => el && rectsIntersect(tr, el.getBoundingClientRect()));
       setIsLightBg(overLight);
     };
 
+    const onScroll = () => {
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        check();
+        rafId = null;
+      });
+    };
+
     check();
-    const obs = new ResizeObserver(check);
-    lightSections.forEach((el) => el && obs.observe(el));
-    window.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
-      obs.disconnect();
-      window.removeEventListener('scroll', check);
+      window.removeEventListener('scroll', onScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
     };
   }, []);
 

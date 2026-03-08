@@ -76,10 +76,6 @@
     /* overflow-x: hidden removed — breaks iOS momentum scrolling */
   }
 
-  /* Use 100svh — stable, doesn't change when iOS toolbar shows/hides */
-  .h-screen {
-    height: 100svh;
-  }
 
   h1,
   h2,
@@ -212,5 +208,14 @@
 
   .marquee-scroll {
     animation: marquee-left-right 60s linear infinite;
+  }
+}
+
+@layer utilities {
+  .h-screen {
+    height: var(--real-100vh, 100svh);
+  }
+  .min-h-screen {
+    min-height: var(--real-100vh, 100svh);
   }
 }

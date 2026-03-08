@@ -84,14 +84,14 @@ const Philosophy = () => {
     <section id="philosophy" style={{ backgroundColor: '#3a171a', overflowX: 'hidden' }}>
 
       {/* ── DESKTOP ── */}
-      <div className="hidden md:grid" style={{ gridTemplateColumns: '1fr 1fr', minHeight: '100svh', width: '100%' }}>
-        <div style={{ position: 'sticky', top: 0, height: '100svh', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'center', padding: '4rem 3rem', overflow: 'hidden', minWidth: 0 }}>
+      <div className="hidden md:grid" style={{ gridTemplateColumns: '1fr 1fr', minHeight: 'var(--real-100vh, 100svh)', width: '100%' }}>
+        <div style={{ position: 'sticky', top: 0, height: 'var(--real-100vh, 100svh)', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'center', padding: '4rem 3rem', overflow: 'hidden', minWidth: 0 }}>
           <p className="luxury-body mb-16 text-center text-8xl uppercase leading-tight whitespace-nowrap px-1" style={{ color: 'var(--milk)', opacity: 0.7, letterSpacing: '0.02em', transform: 'scaleY(1.2)', transformOrigin: 'center', marginTop: '1rem', marginBottom: '-5rem' }}>
             {t('philosophy.label')}
           </p>
           {desktopContent}
         </div>
-        <div style={{ position: 'sticky', top: 0, height: '100svh', width: '100%', overflow: 'hidden', minWidth: 0, backgroundColor: '#3a171a' }}>
+        <div style={{ position: 'sticky', top: 0, height: 'var(--real-100vh, 100svh)', width: '100%', overflow: 'hidden', minWidth: 0, backgroundColor: '#3a171a' }}>
           {imageBlock}
         </div>
       </div>
