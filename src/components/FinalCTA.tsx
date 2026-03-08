@@ -1,16 +1,19 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useParallax } from '@/hooks/useParallax';
 import ctaImage from '@/assets/cta.jpeg';
 import EmailLink from '@/components/EmailLink';
 
 const FinalCTA = () => {
   const { t } = useLanguage();
   const { ref, isVisible } = useScrollAnimation(0.2);
+  const bgRef = useParallax(0.2, -320);
 
   return (
     <section className="relative pt-20 pb-20 sm:pt-20 sm:py-28 md:py-32 lg:py-48 overflow-hidden">
       <div
-        className="absolute inset-0 parallax-bg"
+        ref={bgRef}
+        className="parallax-bg"
         style={{ backgroundImage: `url(${ctaImage})` }}
       >
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(58, 23, 26, 0.5)' }} />

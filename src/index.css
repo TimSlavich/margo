@@ -170,21 +170,14 @@
   }
 
   .parallax-bg {
-    background-attachment: fixed;
-    background-position: center;
+    position: absolute;
+    top: -320px;
+    left: 0;
+    right: 0;
+    bottom: -500px;
     background-size: cover;
-  }
-
-  @media (max-width: 768px) {
-    .parallax-bg {
-      background-attachment: scroll;
-    }
-  }
-
-  @supports (-webkit-touch-callout: none) {
-    .parallax-bg {
-      background-attachment: scroll;
-    }
+    background-position: center;
+    will-change: transform;
   }
 
   .scrollbar-hide {

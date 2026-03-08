@@ -2,10 +2,12 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect, useState } from 'react';
 import heroImage from '@/assets/hero.png';
 import EmailLink from '@/components/EmailLink';
+import { useParallax } from '@/hooks/useParallax';
 
 const Hero = () => {
   const { t } = useLanguage();
   const [loaded, setLoaded] = useState(false);
+  const bgRef = useParallax(0.2);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 200);
@@ -19,7 +21,8 @@ const Hero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <div
-        className="absolute inset-0 parallax-bg"
+        ref={bgRef}
+        className="parallax-bg"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-foreground/35" />
