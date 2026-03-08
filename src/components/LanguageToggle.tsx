@@ -41,7 +41,7 @@ const LanguageToggle = () => {
   return (
     <div
       ref={ref}
-      className={`fixed top-6 right-6 z-50 flex items-center gap-2 luxury-label-cascadia transition-colors duration-300 ${
+      className={`fixed top-6 right-6 z-50 flex h-10 items-center gap-2 luxury-label-cascadia transition-colors duration-300 ${
         isLightBg ? 'text-foreground' : 'text-primary-foreground'
       }`}
     >
