@@ -6,7 +6,7 @@
     "surname": "slavich",
     "firstName": "margarita",
     "title": "Personal Stylist",
-    "tagline": "a wardrobe that reflects you and works as a system",
+    "tagline": "\"a wardrobe that reflects you and works as a system\"",
     "cta": "Book a Free Consultation",
     "explore": "Explore"
   },
@@ -224,6 +224,7 @@
     "label": "Results"
   },
   "cta": {
+    "label": "Contact",
     "heading": "Lets build a refined | wardrobe that works",
     "email": "Book via Email",
     "telegram": "Telegram",

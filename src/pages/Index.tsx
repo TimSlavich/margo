@@ -1,4 +1,5 @@
 import LanguageToggle from '@/components/LanguageToggle';
+import BurgerMenu from '@/components/BurgerMenu';
 import Hero from '@/components/Hero';
 import Philosophy from '@/components/Philosophy';
 import ServicesAndPricing from '@/components/ServicesAndPricing';
@@ -10,6 +11,7 @@ import FinalCTA from '@/components/FinalCTA';
 const Index = () => {
   return (
     <main style={{ overflowX: 'clip' }}>
+      <BurgerMenu />
       <LanguageToggle />
       <Hero />
       <Philosophy />
