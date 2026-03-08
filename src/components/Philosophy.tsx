@@ -106,7 +106,7 @@ const Philosophy = () => {
         >
           {mobileText}
         </div>
-        <div style={{ position: 'relative', marginTop: '-1px', paddingBottom: 'env(safe-area-inset-bottom, 0)' }}>
+        <div style={{ position: 'relative', marginTop: '-1px', marginBottom: '-1px' }}>
           <div
             style={{
               position: 'absolute',
