@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import LanguageToggle from '@/components/LanguageToggle';
 import BurgerMenu from '@/components/BurgerMenu';
 import Hero from '@/components/Hero';
@@ -9,13 +10,15 @@ import Gallery from '@/components/Gallery';
 import FinalCTA from '@/components/FinalCTA';
 
 const Index = () => {
+  const [modalKey, setModalKey] = useState<string | null>(null);
+
   return (
     <main style={{ overflowX: 'clip' }}>
-      <BurgerMenu />
+      <BurgerMenu isModalOpen={!!modalKey} />
       <LanguageToggle />
       <Hero />
       <Philosophy />
-      <ServicesAndPricing />
+      <ServicesAndPricing modalKey={modalKey} setModalKey={setModalKey} />
       <Process />
       <Experience />
       <Gallery />

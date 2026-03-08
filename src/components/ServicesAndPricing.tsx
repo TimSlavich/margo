@@ -83,26 +83,17 @@ const ServiceCard = ({
         style={{ maxHeight: isOpen ? '600px' : '0', opacity: isOpen ? 1 : 0 }}
       >
         <div className="px-6 pb-7 border-t pt-5" style={{ borderColor: '#3a171a' }}>
-          <p className="luxury-body text-black text-sm mb-6 leading-relaxed">
+          <p className="luxury-body text-black text-sm mb-6 leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
             {t(`services.${service.key}.desc`)}
           </p>
 
-          <div className="flex items-center justify-between mt-4">
-            <p className="luxury-body text-2xl" style={{ color: '#3a171a' }}>
-              {service.fromPrice && (
-                <span className="luxury-body mr-2 align-middle" style={{ color: '#3a171a' }}>
-                  {t('services.from')}
-                </span>
-              )}
-              {formatPrice(Number(t(`services.${service.key}.price`)))}
-            </p>
-
+          <div className="flex justify-end mt-4">
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 onDetails();
               }}
-              className="luxury-body border text-primary px-6 py-2.5 tracking-[0.15em] transition-all duration-500 hover:bg-primary hover:text-primary-foreground"
+              className="luxury-body border text-primary px-5 py-2.5 tracking-[0.15em] transition-all duration-500 hover:bg-primary hover:text-primary-foreground shrink-0 whitespace-nowrap"
               style={{ borderColor: '#3a171a' }}
             >
               {t('services.details')}
@@ -114,11 +105,16 @@ const ServiceCard = ({
   );
 };
 
-const ServicesAndPricing = () => {
+const ServicesAndPricing = ({
+  modalKey,
+  setModalKey,
+}: {
+  modalKey: string | null;
+  setModalKey: (k: string | null) => void;
+}) => {
   const { t } = useLanguage();
   const { ref, isVisible } = useScrollAnimation(0.1);
   const [openKeys, setOpenKeys] = useState<Set<string>>(new Set());
-  const [modalKey, setModalKey] = useState<string | null>(null);
 
   const toggle = (key: string) => {
     setOpenKeys((prev) => {
@@ -151,7 +147,7 @@ const ServicesAndPricing = () => {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-5 items-start">
           {services.map((service, index) => (
             <div

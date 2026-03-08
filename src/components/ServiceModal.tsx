@@ -6,6 +6,8 @@ import EmailLink from '@/components/EmailLink';
 interface ServiceDetails {
   for: string[];
   steps?: string[];
+  steps_label?: string;
+  steps_bullets?: boolean;
   online_steps?: string[];
   offline_steps?: string[];
   notes?: string;
@@ -142,18 +144,28 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
           {details.steps && details.steps.length > 0 && (
             <div>
               <p className="luxury-body text-black mb-4 uppercase">
-                {t('modal.steps')}
+                {details.steps_label ?? t('modal.steps')}
               </p>
-              <ol className="space-y-3">
-                {details.steps.map((step, i) => (
-                  <li key={i} className="luxury-body text-sm flex gap-3 text-black">
-                    <span className="luxury-body text-primary shrink-0 mt-0.5 tabular-nums">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <span className="text-black">{step}</span>
-                  </li>
-                ))}
-              </ol>
+              {details.steps_bullets ? (
+                <ul className="space-y-3 list-disc list-inside">
+                  {details.steps.map((step, i) => (
+                    <li key={i} className="luxury-body text-sm text-black">
+                      <span className="text-black">{step}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <ol className="space-y-3">
+                  {details.steps.map((step, i) => (
+                    <li key={i} className="luxury-body text-sm flex gap-3 text-black">
+                      <span className="luxury-body text-primary shrink-0 mt-0.5 tabular-nums">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span className="text-black">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              )}
             </div>
           )}
 
@@ -172,20 +184,20 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
                   </button>
                   <div
                     className="overflow-hidden transition-all duration-300 ease-out"
-                    style={{ maxHeight: openOnline ? '800px' : '0' }}
+                    style={{ maxHeight: openOnline ? '2400px' : '0' }}
                   >
                     <ol className="space-y-3 px-5 pb-5 pt-0">
                       {details.online_steps.map((step, i) => (
                         <li key={i} className="luxury-body text-sm flex gap-3 text-black">
                           <span className="luxury-body shrink-0 mt-0.5 tabular-nums" style={{ color: '#3a171a' }}>{String(i + 1).padStart(2, '0')}</span>
-                          <span>{step}</span>
+                          <span style={{ whiteSpace: 'pre-line' }}>{step}</span>
                         </li>
                       ))}
                     </ol>
                     {serviceKey === 'shopping' && (details.online_notes ?? details.notes) && (
                       <div className="mx-5 mb-5 px-4 py-4" style={{ border: '2px solid #3a171a' }}>
                         <p className="luxury-body text-black mb-2 uppercase">{t('modal.important')}</p>
-                        <p className="luxury-body text-black text-sm leading-relaxed">{details.online_notes ?? details.notes}</p>
+                        <p className="luxury-body text-black text-sm leading-relaxed" style={{ whiteSpace: 'pre-line' }}>{details.online_notes ?? details.notes}</p>
                       </div>
                     )}
                   </div>
@@ -203,20 +215,20 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
                   </button>
                   <div
                     className="overflow-hidden transition-all duration-300 ease-out"
-                    style={{ maxHeight: openOffline ? '1200px' : '0' }}
+                    style={{ maxHeight: openOffline ? '2400px' : '0' }}
                   >
                     <ol className="space-y-3 px-5 pb-5 pt-0">
                       {details.offline_steps.map((step, i) => (
                         <li key={i} className="luxury-body text-sm flex gap-3 text-black">
                           <span className="luxury-body shrink-0 mt-0.5 tabular-nums" style={{ color: '#3a171a' }}>{String(i + 1).padStart(2, '0')}</span>
-                          <span>{step}</span>
+                          <span style={{ whiteSpace: 'pre-line' }}>{step}</span>
                         </li>
                       ))}
                     </ol>
                     {(serviceKey === 'wardrobe' || serviceKey === 'shopping') && (details.offline_notes ?? details.notes) && (
                       <div className="mx-5 mb-5 px-4 py-4" style={{ border: '2px solid #3a171a' }}>
                         <p className="luxury-body text-black mb-2 uppercase">{t('modal.important')}</p>
-                        <p className="luxury-body text-black text-sm leading-relaxed">{details.offline_notes ?? details.notes}</p>
+                        <p className="luxury-body text-black text-sm leading-relaxed" style={{ whiteSpace: 'pre-line' }}>{details.offline_notes ?? details.notes}</p>
                       </div>
                     )}
                   </div>
@@ -247,7 +259,7 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
               <p className="luxury-body text-black mb-2 uppercase">
                 {t('modal.important')}
               </p>
-              <p className="luxury-body text-black text-sm leading-relaxed">
+              <p className="luxury-body text-black text-sm leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
                 {details.notes}
               </p>
             </div>

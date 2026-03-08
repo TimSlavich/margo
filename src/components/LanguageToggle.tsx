@@ -11,7 +11,7 @@ const LanguageToggle = () => {
 
   useEffect(() => {
     const toggle = ref.current;
-    const lightSections = ['services', 'gallery', 'philosophy'].map((id) => document.getElementById(id)).filter(Boolean);
+    const lightSections = ['services', 'gallery'].map((id) => document.getElementById(id)).filter(Boolean);
     if (!toggle || lightSections.length === 0) return;
 
     let rafId: number | null = null;

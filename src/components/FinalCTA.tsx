@@ -23,7 +23,7 @@ const FinalCTA = () => {
         ref={ref}
         className={`fade-up ${isVisible ? 'visible' : ''} relative z-10 max-w-2xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center`}
       >
-        <h2 className="luxury-label-cascadia uppercase mb-10 sm:mb-14 sm:-mt-28 text-center flex flex-col gap-0 leading-tight text-base sm:text-lg md:text-xl lg:text-2xl" style={{ color: 'var(--milk)' }}>
+        <h2 className="luxury-label-cascadia uppercase mb-10 sm:mb-14 lg:-mt-28 text-center flex flex-col gap-0 leading-tight text-base sm:text-lg md:text-xl lg:text-2xl" style={{ color: 'var(--milk)' }}>
           {t('cta.heading').split(' | ').map((line, i) => (
             <span key={i}>{line}</span>
           ))}
