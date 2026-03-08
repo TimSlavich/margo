@@ -7,7 +7,8 @@ import { useParallax } from '@/hooks/useParallax';
 const Hero = () => {
   const { t } = useLanguage();
   const [loaded, setLoaded] = useState(false);
-  const bgRef = useParallax(0.2);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const bgRef = useParallax(isMobile ? 0 : 0.2);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 200);
@@ -22,8 +23,15 @@ const Hero = () => {
     <section className="relative h-screen w-full overflow-hidden" style={{ backgroundColor: '#1a0a0b' }}>
       <div
         ref={bgRef}
-        className="parallax-bg"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        className={isMobile ? undefined : 'parallax-bg'}
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: `url(${heroImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          ...(isMobile ? {} : { top: '-320px', bottom: '-500px' }),
+        }}
       >
         <div className="absolute inset-0 bg-foreground/35" />
       </div>
