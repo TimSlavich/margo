@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import ServiceModal from './ServiceModal';
-import wardrobeImg from '@/assets/service-wardrobe.png';
+import wardrobeImg from '@/assets/service-wardrobe.jpeg';
 import shoppingImg from '@/assets/service-shopping.png';
 import capsuleImg from '@/assets/service-capsule.png';
-import eventImg from '@/assets/service-event.png';
-import mentoringImg from '@/assets/service-mentoring.png';
+import eventImg from '@/assets/service-event.jpeg';
+import mentoringImg from '@/assets/service-mentoring.jpeg';
 
 interface Service {
   key: string;
@@ -51,8 +51,8 @@ const ServiceCard = ({
           style={
             service.key === 'shopping'
               ? { objectPosition: '50% 30%' }
-              : service.key === 'mentoring'
-                ? { objectPosition: '50% 25%' }
+                : service.key === 'mentoring'
+                ? { objectPosition: '50% 10%' }
                 : undefined
           }
         />

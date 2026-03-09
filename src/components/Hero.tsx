@@ -7,7 +7,7 @@ import { useParallax } from '@/hooks/useParallax';
 const Hero = () => {
   const { t } = useLanguage();
   const [loaded, setLoaded] = useState(false);
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1140;
   const bgRef = useParallax(isMobile ? 0 : 0.2);
 
   useEffect(() => {

@@ -46,17 +46,21 @@
       gtag('config', 'G-NCXJ2XE3RM');
     </script>
 
-    <!-- iOS Safari: set --real-100vh once on load + orientation change only.
-         Never on resize — iOS fires resize when toolbar shows/hides during scroll,
-         which causes layout reflow and visible jitter. -->
+    <!-- Set --real-100vh on load, orientation change, and debounced resize.
+         Debounce avoids iOS Safari jitter from toolbar show/hide. -->
     <script>
       (function () {
+        var timer;
         function setVh() {
           document.documentElement.style.setProperty('--real-100vh', window.innerHeight + 'px');
         }
         setVh();
         window.addEventListener('orientationchange', function () {
           setTimeout(setVh, 200);
+        });
+        window.addEventListener('resize', function () {
+          clearTimeout(timer);
+          timer = setTimeout(setVh, 300);
         });
       })();
     </script>
