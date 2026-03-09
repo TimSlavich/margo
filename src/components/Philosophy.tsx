@@ -25,7 +25,7 @@ const Philosophy = () => {
   );
 
   const desktopQuote = (
-    <blockquote className="hero-name quote-sentence-case text-center" style={{ color: 'var(--milk)', opacity: 0.9, marginTop: 'auto', paddingTop: '6rem', width: '100%', marginInline: 'auto', fontSize: 'clamp(0.5rem, 0.85vw, 0.75rem)' }}>
+    <blockquote className="hero-name quote-sentence-case text-center" style={{ color: 'var(--milk)', opacity: 0.9, marginTop: 'auto', marginBottom: 'auto', width: '100%', marginInline: 'auto', fontSize: 'clamp(0.5rem, 0.85vw, 0.75rem)' }}>
           <span className="hidden desk:inline whitespace-nowrap">"{t('philosophy.quote')}"</span>
           <span className="desk:hidden">
         "{t('philosophy.quote').split('. ').map((part, i) => (
@@ -38,7 +38,6 @@ const Philosophy = () => {
   const desktopContent = (
     <div style={{ width: '100%', maxWidth: '36rem', alignSelf: 'center', display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
       {desktopParagraphs}
-      {desktopQuote}
     </div>
   );
 
@@ -83,6 +82,7 @@ const Philosophy = () => {
             {t('philosophy.label')}
           </p>
           {desktopContent}
+          {desktopQuote}
         </div>
         <div style={{ position: 'sticky', top: 0, height: 'var(--real-100vh, 100svh)', width: '100%', overflow: 'hidden', minWidth: 0, backgroundColor: '#3a171a' }}>
           {imageBlock}
