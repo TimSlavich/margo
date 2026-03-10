@@ -20,7 +20,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden" style={{ backgroundColor: '#1a0a0b' }}>
+    <section className="relative w-full overflow-hidden" style={{ backgroundColor: '#1a0a0b', height: '100dvh' }}>
       <div
         ref={bgRef}
         className={isMobile ? undefined : 'parallax-bg'}
@@ -37,7 +37,10 @@ const Hero = () => {
       </div>
 
       <div className="absolute inset-0 z-10 flex flex-col items-center w-full px-4 sm:px-6 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
-        <div className="flex-1 w-full" />
+        {/* spacer above name */}
+        <div className="flex-[3] w-full" />
+
+        {/* NAME block */}
         <div
           className="flex-shrink-0 flex flex-col items-center justify-center w-full"
           style={{
@@ -56,26 +59,40 @@ const Hero = () => {
             </span>
           </h1>
         </div>
-        <div className="flex-1 flex flex-col items-center justify-between w-full overflow-x-hidden min-h-0">
-          <div className="flex-1 flex items-center justify-center text-center w-full min-h-0 -mt-[0rem] sm:mt-0">
-            <p className="luxury-label-cascadia text-primary-foreground/80 text-[0.75rem] sm:text-sm md:text-xl lg:text-2xl max-w-full text-center px-4 tracking-[0.04em] sm:tracking-normal sm:whitespace-nowrap" style={{ wordSpacing: '-0.01em', lineHeight: 1.5 }}>
-              {t('hero.tagline')}
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-7 sm:gap-10 pb-16 sm:pb-20 flex-shrink-0 mt-8 sm:mt-12">
-            <EmailLink
-              className="luxury-label-cascadia w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-3 tracking-[0.2em] transition-all duration-500 border hover:bg-[#3a171a] text-center"
-              style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
-            >
-              {t('hero.cta')}
-            </EmailLink>
-            <button
-              onClick={scrollToPhilosophy}
-              className="luxury-label-cascadia text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-500 flex items-center gap-2"
-            >
-              {t('hero.explore')} <span className="text-lg">↓</span>
-            </button>
-          </div>
+
+        {/* spacer between name and tagline */}
+        <div className="flex-[0.6] w-full" />
+
+        {/* TAGLINE block — centered between name and buttons */}
+        <p
+          className="flex-shrink-0 luxury-label-cascadia text-primary-foreground/80 text-[0.65rem] sm:text-sm md:text-xl lg:text-2xl max-w-[280px] sm:max-w-full text-center px-4 tracking-[0.04em] sm:tracking-normal sm:whitespace-nowrap"
+          style={{
+            wordSpacing: '-0.01em',
+            lineHeight: 1.5,
+            opacity: loaded ? 1 : 0,
+            transition: 'opacity 1.5s ease-out',
+          }}
+        >
+          {t('hero.tagline')}
+        </p>
+
+        {/* spacer between tagline and buttons */}
+        <div className="flex-[1.45] w-full" />
+
+        {/* BUTTONS block */}
+        <div className="flex-shrink-0 flex flex-col items-center gap-5 sm:gap-10 pb-8 sm:pb-20">
+          <EmailLink
+            className="luxury-label-cascadia w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-3 tracking-[0.2em] transition-all duration-500 border hover:bg-[#3a171a] text-center"
+            style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
+          >
+            {t('hero.cta')}
+          </EmailLink>
+          <button
+            onClick={scrollToPhilosophy}
+            className="luxury-label-cascadia text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-500 flex items-center gap-2"
+          >
+            {t('hero.explore')} <span className="text-lg">↓</span>
+          </button>
         </div>
       </div>
     </section>
