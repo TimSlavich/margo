@@ -20,7 +20,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ backgroundColor: '#1a0a0b', height: '100dvh' }}>
+    <section className="relative w-full overflow-hidden" style={{ backgroundColor: '#1a0a0b', height: '100vh', minHeight: '-webkit-fill-available' }}>
       <div
         ref={bgRef}
         className={isMobile ? undefined : 'parallax-bg'}
