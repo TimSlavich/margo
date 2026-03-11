@@ -222,8 +222,10 @@
   "cta": {
     "label": "Контакт",
     "heading": "Давайте створимо продуманий гардероб, що працює на вас",
-    "email": "Написати на email",
-    "telegram": "Telegram",
-    "instagram": "Instagram"
+    "contactMe": "Зв'яжіться зі мною:",
+    "telegram": "telegram",
+    "instagram": "inst",
+    "email": "mail",
+    "whatsapp": "WhatsApp"
   }
 }

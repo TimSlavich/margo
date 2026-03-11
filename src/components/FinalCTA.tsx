@@ -34,7 +34,7 @@ const FinalCTA = () => {
             className="luxury-label-cascadia w-full px-6 py-3 tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
-            {t('cta.email')}
+            {t('cta.email')}: margarita.sl.pr@gmail.com
           </EmailLink>
 
           <a
@@ -44,17 +44,27 @@ const FinalCTA = () => {
             className="luxury-label-cascadia w-full px-6 py-3 tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
-            {t('cta.telegram')} @MSlavych
+            {t('cta.telegram')}: @MSlavych
           </a>
 
           <a
-            href="https://instagram.com/margarita.slavich"
+            href="https://instagram.com/margaritaslavich"
             target="_blank"
             rel="noopener noreferrer"
             className="luxury-label-cascadia w-full px-6 py-3 tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
-            {t('cta.instagram')} @margarita.slavich
+            {t('cta.instagram')}: @margaritaslavich
+          </a>
+
+          <a
+            href="https://wa.me/6598929093"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="luxury-label-cascadia w-full px-6 py-3 tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase"
+            style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
+          >
+            {t('cta.whatsapp')}: +6598929093
           </a>
         </div>
       </div>

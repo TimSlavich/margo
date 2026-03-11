@@ -223,9 +223,11 @@
   },
   "cta": {
     "label": "Contact",
-    "heading": "Lets build a refined | wardrobe that works",
-    "email": "Book via Email",
-    "telegram": "Telegram",
-    "instagram": "Instagram"
+    "heading": "I'd love to work with you.",
+    "contactMe": "Contact me:",
+    "telegram": "telegram",
+    "instagram": "inst",
+    "email": "mail",
+    "whatsapp": "WhatsApp"
   }
 }

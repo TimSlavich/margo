@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-const EMAIL = 'slavich.margarita@gmail.com';
+const EMAIL = 'margarita.sl.pr@gmail.com';
 
 interface EmailLinkProps {
   className?: string;
