@@ -21,27 +21,27 @@ const FinalCTA = () => {
 
       <div
         ref={ref}
-        className={`fade-up ${isVisible ? 'visible' : ''} relative z-10 max-w-2xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center`}
+        className={`fade-up ${isVisible ? 'visible' : ''} relative z-10 max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center`}
       >
-        <h2 className="luxury-label-cascadia uppercase mb-10 sm:mb-14 lg:-mt-28 text-center flex flex-col gap-0 leading-tight text-base sm:text-lg md:text-xl lg:text-2xl" style={{ color: 'var(--milk)' }}>
+        <h2 className="luxury-label-cascadia uppercase mb-10 sm:mb-14 lg:-mt-28 text-center flex flex-col gap-0 leading-tight text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl" style={{ color: 'var(--milk)' }}>
           {t('cta.heading').split(' | ').map((line, i) => (
             <span key={i}>{line}</span>
           ))}
         </h2>
 
-        <div className="flex flex-col items-center gap-3 sm:gap-4 w-full max-w-xs mx-auto mt-8 sm:mt-12">
+        <div className="flex flex-col items-center gap-3 sm:gap-4 w-full max-w-md mx-auto mt-8 sm:mt-12">
           <EmailLink
-            className="luxury-label-cascadia w-full px-6 py-3 tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase"
+            className="luxury-label-cascadia w-full px-4 sm:px-6 py-3 text-[0.65rem] sm:text-xs tracking-[0.1em] sm:tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase whitespace-nowrap"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
-            {t('cta.email')}: margarita.sl.pr@gmail.com
+            {t('cta.email')}: slavich.margarita@gmail.com
           </EmailLink>
 
           <a
             href="https://t.me/MSlavych"
             target="_blank"
             rel="noopener noreferrer"
-            className="luxury-label-cascadia w-full px-6 py-3 tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase"
+            className="luxury-label-cascadia w-full px-4 sm:px-6 py-3 text-[0.65rem] sm:text-xs tracking-[0.1em] sm:tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase whitespace-nowrap"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
             {t('cta.telegram')}: @MSlavych
@@ -51,7 +51,7 @@ const FinalCTA = () => {
             href="https://instagram.com/margaritaslavich"
             target="_blank"
             rel="noopener noreferrer"
-            className="luxury-label-cascadia w-full px-6 py-3 tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase"
+            className="luxury-label-cascadia w-full px-4 sm:px-6 py-3 text-[0.65rem] sm:text-xs tracking-[0.1em] sm:tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase whitespace-nowrap"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
             {t('cta.instagram')}: @margaritaslavich
@@ -61,7 +61,7 @@ const FinalCTA = () => {
             href="https://wa.me/6598929093"
             target="_blank"
             rel="noopener noreferrer"
-            className="luxury-label-cascadia w-full px-6 py-3 tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase"
+            className="luxury-label-cascadia w-full px-4 sm:px-6 py-3 text-[0.65rem] sm:text-xs tracking-[0.1em] sm:tracking-[0.2em] transition-all duration-500 border text-center hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase whitespace-nowrap"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
             {t('cta.whatsapp')}: +6598929093
