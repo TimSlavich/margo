@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import ServiceModal from './ServiceModal';
@@ -126,6 +126,16 @@ const ServicesAndPricing = ({
       return next;
     });
   };
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const key = (e as CustomEvent<string>).detail;
+      setModalKey(key);
+      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+    };
+    window.addEventListener('open-service', handler);
+    return () => window.removeEventListener('open-service', handler);
+  }, [setModalKey]);
 
   const activeService = services.find((s) => s.key === modalKey);
 

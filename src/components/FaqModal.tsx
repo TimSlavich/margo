@@ -54,6 +54,30 @@ const FaqModal = () => {
     };
   }, [isOpen, handleClose]);
 
+  const renderAnswer = useCallback((text: string) => {
+    const parts = text.split(/(<service:\w+>.*?<\/service:\w+>)/g);
+    return parts.map((part, i) => {
+      const match = part.match(/^<service:(\w+)>(.*?)<\/service:\w+>$/);
+      if (!match) return part;
+      const [, serviceKey, label] = match;
+      return (
+        <button
+          key={i}
+          type="button"
+          onClick={() => {
+            handleClose();
+            setTimeout(() => {
+              window.dispatchEvent(new CustomEvent('open-service', { detail: serviceKey }));
+            }, DURATION + 50);
+          }}
+          className="underline hover:opacity-70 transition-opacity"
+        >
+          {label}
+        </button>
+      );
+    });
+  }, [handleClose]);
+
   if (!isOpen) return null;
 
   const rawQuestions = tRaw('faq.questions', { returnObjects: true });
@@ -130,7 +154,7 @@ const FaqModal = () => {
                 >
                   <div className="px-8 pb-6">
                     <p className="luxury-body text-black text-sm leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
-                      {item.a}
+                      {renderAnswer(item.a)}
                     </p>
                   </div>
                 </div>

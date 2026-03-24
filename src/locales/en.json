@@ -255,11 +255,11 @@
     "questions": [
       {
         "q": "Who this is for",
-        "a": "If getting dressed feels confusing, unsatisfying, or disconnected from the woman you are today or the woman you are becoming, this kind of work may be exactly what you need. You want to understand what truly works for your body, lifestyle, preferences, and everyday reality — not just keep buying random new pieces in the hope that something finally clicks.\n\nIt may be especially helpful if:\n • you feel stuck with your wardrobe and want a clearer, more refined direction\n • you want to better understand what genuinely suits your body, lifestyle, and personal taste\n • you are tired of buying pieces that do not work well with what you already own\n • your wardrobe feels disconnected, inconsistent, or no longer reflective of who you are\n • your style feels like it has lost its direction and no longer reflects you fully\n • you want to invest in pieces that will serve you well over time, not just for a moment"
+        "a": "If getting dressed feels confusing, unsatisfying, or disconnected from the woman you are today or the woman you are becoming, this kind of work may be exactly what you need.\n\nYou want to understand what truly works for your body, lifestyle, preferences, and everyday reality — not just keep buying random new pieces in the hope that something finally clicks."
       },
       {
         "q": "Who this is not for",
-        "a": "This may not be the right fit if:\n • you are not planning to purchase anything at all and are only looking for general inspiration\n • you only need one outfit for a single occasion or event (unless you are specifically booking my dedicated service for event or photoshoot styling)\n • your main priority is finding the cheapest possible options regardless of quality, fit, or longevity\n • your focus is on getting as many new outfits as possible rather than building a wardrobe that works as a whole\n • you prefer a more trendy, fast-fashion-focused approach with frequent impulse purchases"
+        "a": "This may not be the right fit if:\n • you are not planning to purchase anything at all and are only looking for general inspiration\n • you only need one outfit for a single occasion or event (unless you are specifically booking my dedicated service for <service:event>event or photoshoot styling</service:event>)\n • your main priority is finding the cheapest possible options regardless of quality, fit, or longevity\n • your focus is on getting as many new outfits as possible rather than building a wardrobe that works as a whole\n • you prefer a more trendy, fast-fashion-focused approach with frequent impulse purchases"
       },
       {
         "q": "What if I only need help with a few pieces or one occasion?",
@@ -338,7 +338,7 @@
       "noLimit": "No limit"
     },
     "servicesNote": "You’ll find all my services here on our website. I also encourage you to check FAQs, as many questions are answered there before we schedule the call.",
-    "confirmLabel": "Please confirm you have read through my services and FAQ’s",
+    "confirmLabel": "Please confirm you have read through my services and <faq>FAQ’s</faq>",
     "submit": "Send",
     "required": "This field is required",
     "invalidEmail": "Please enter a valid email",

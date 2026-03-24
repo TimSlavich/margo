@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback, FormEvent } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useContactForm } from '@/contexts/ContactFormContext';
+import { useFaq } from '@/contexts/FaqContext';
 
 const WEB3FORMS_KEY = 'e7347692-2656-46b0-87a4-6ae9bf36e877';
 
@@ -30,6 +31,7 @@ const DURATION = 320;
 const ContactFormModal = () => {
   const { t } = useLanguage();
   const { isOpen, preselectedService, closeForm } = useContactForm();
+  const { openFaq } = useFaq();
   const [visible, setVisible] = useState(false);
 
 
@@ -398,7 +400,24 @@ const ContactFormModal = () => {
               className="sr-only"
             />
             <span className="luxury-body text-sm text-black">
-              {t('contactForm.confirmLabel')}
+              {(() => {
+                const label = t('contactForm.confirmLabel');
+                const match = label.match(/^(.*)<faq>(.*?)<\/faq>(.*)$/);
+                if (!match) return label;
+                return (
+                  <>
+                    {match[1]}
+                    <button
+                      type="button"
+                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); closeForm(); openFaq(); }}
+                      className="underline hover:opacity-70 transition-opacity"
+                    >
+                      {match[2]}
+                    </button>
+                    {match[3]}
+                  </>
+                );
+              })()}
             </span>
           </label>
           {submitted && errors.confirmed && (
