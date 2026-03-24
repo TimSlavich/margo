@@ -1,11 +1,12 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect, useState } from 'react';
 import heroImage from '@/assets/hero.png';
-import EmailLink from '@/components/EmailLink';
+import { useContactForm } from '@/contexts/ContactFormContext';
 import { useParallax } from '@/hooks/useParallax';
 
 const Hero = () => {
   const { t } = useLanguage();
+  const { openForm } = useContactForm();
   const [loaded, setLoaded] = useState(false);
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 1140;
   const bgRef = useParallax(isMobile ? 0 : 0.2);
@@ -81,12 +82,13 @@ const Hero = () => {
 
         {/* BUTTONS block */}
         <div className="flex-shrink-0 flex flex-col items-center gap-5 sm:gap-10 pb-8 sm:pb-20">
-          <EmailLink
+          <button
+            onClick={() => openForm()}
             className="luxury-label-cascadia w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-3 tracking-[0.2em] transition-all duration-500 border hover:bg-[#3a171a] text-center"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
             {t('hero.cta')}
-          </EmailLink>
+          </button>
           <button
             onClick={scrollToPhilosophy}
             className="luxury-label-cascadia text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-500 flex items-center gap-2"

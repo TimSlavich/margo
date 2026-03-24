@@ -7,6 +7,7 @@ import shoppingImg from '@/assets/service-shopping.png';
 import capsuleImg from '@/assets/service-capsule.png';
 import eventImg from '@/assets/service-event.jpeg';
 import mentoringImg from '@/assets/service-mentoring.jpeg';
+import transformationImg from '@/assets/service-transformation.jpeg';
 
 interface Service {
   key: string;
@@ -15,6 +16,7 @@ interface Service {
 }
 
 const services: Service[] = [
+  { key: 'transformation', image: transformationImg, fromPrice: false },
   { key: 'wardrobe', image: wardrobeImg, fromPrice: false },
   { key: 'shopping', image: shoppingImg, fromPrice: false },
   { key: 'capsule', image: capsuleImg, fromPrice: false },
@@ -149,13 +151,10 @@ const ServicesAndPricing = ({
 
         <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-5 items-start">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div
               key={service.key}
-              className={[
-                'lg:col-span-2',
-                index === 3 ? 'lg:col-start-2' : '',
-              ].join(' ').trim()}
+              className="lg:col-span-2"
             >
               <ServiceCard
                 service={service}

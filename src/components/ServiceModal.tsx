@@ -1,10 +1,11 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/contexts/LanguageContext';
-import EmailLink from '@/components/EmailLink';
+import { useContactForm } from '@/contexts/ContactFormContext';
 
 interface ServiceDetails {
   for: string[];
+  description?: string;
   steps?: string[];
   steps_label?: string;
   steps_bullets?: boolean;
@@ -26,9 +27,11 @@ const DURATION = 320;
 const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalProps) => {
   const { t, formatPrice } = useLanguage();
   const { t: tRaw } = useTranslation();
+  const { openForm } = useContactForm();
   const [visible, setVisible] = useState(false);
   const [openOnline, setOpenOnline] = useState(false);
   const [openOffline, setOpenOffline] = useState(false);
+  const [openSteps, setOpenSteps] = useState<Set<number>>(new Set());
 
   // Trigger enter animation after first paint
   useEffect(() => {
@@ -107,8 +110,8 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
         {/* Header — never scrolls */}
         <div className="flex-shrink-0 border-b border-border px-8 py-6 flex items-start justify-between gap-4">
           <div>
-            <p className="hero-name uppercase text-black mb-1">{t('services.label')}</p>
-            <h2 className="hero-name uppercase text-2xl md:text-3xl text-black">
+            <p className="hero-name uppercase mb-1" style={{ color: '#3a171a' }}>{t('services.label')}</p>
+            <h2 className="hero-name uppercase text-2xl md:text-3xl" style={{ color: '#3a171a' }}>
               {t(`services.${serviceKey}.title`)}
             </h2>
           </div>
@@ -140,6 +143,20 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
             </div>
           )}
 
+          {/* Description — intro text before steps */}
+          {details.description && (
+            <div className="luxury-body text-black text-sm leading-relaxed space-y-4">
+              {details.description.split('\n\n').map((paragraph, i) => {
+                const isBold = paragraph.endsWith('?');
+                return (
+                  <p key={i} className={isBold ? 'font-semibold uppercase' : ''}>
+                    {paragraph}
+                  </p>
+                );
+              })}
+            </div>
+          )}
+
           {/* Steps (single format) */}
           {details.steps && details.steps.length > 0 && (
             <div>
@@ -155,15 +172,69 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
                   ))}
                 </ul>
               ) : (
-                <ol className="space-y-3">
-                  {details.steps.map((step, i) => (
-                    <li key={i} className="luxury-body text-sm flex gap-3 text-black">
-                      <span className="luxury-body text-primary shrink-0 mt-0.5 tabular-nums">
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
-                      <span className="text-black">{step}</span>
-                    </li>
-                  ))}
+                <ol className="space-y-6">
+                  {details.steps.map((step, i) => {
+                    const parts = step.split('\n\n');
+                    const hasTitle = parts.length > 1;
+                    const title = hasTitle ? parts[0] : null;
+                    const body = hasTitle ? parts.slice(1).join('\n\n') : step;
+                    const isCollapsible = hasTitle && !!details.description;
+                    const isStepOpen = openSteps.has(i);
+
+                    const toggleStep = () => {
+                      setOpenSteps((prev) => {
+                        const next = new Set(prev);
+                        if (next.has(i)) next.delete(i);
+                        else next.add(i);
+                        return next;
+                      });
+                    };
+
+                    return (
+                      <li key={i} className="luxury-body text-sm text-black">
+                        {isCollapsible ? (
+                          <div>
+                            <button
+                              type="button"
+                              onClick={toggleStep}
+                              className="w-full flex items-center gap-3 text-left hover:opacity-80 transition-opacity"
+                            >
+                              <span className="luxury-body text-primary shrink-0 tabular-nums">
+                                {String(i + 1).padStart(2, '0')}
+                              </span>
+                              <span className="luxury-body text-black uppercase flex-1">{title}</span>
+                              <span
+                                className="text-black text-lg transition-transform duration-300 shrink-0"
+                                style={{ transform: isStepOpen ? 'rotate(45deg)' : 'rotate(0)' }}
+                              >
+                                +
+                              </span>
+                            </button>
+                            <div
+                              className="overflow-hidden transition-all duration-300 ease-out"
+                              style={{ maxHeight: isStepOpen ? '2400px' : '0', opacity: isStepOpen ? 1 : 0 }}
+                            >
+                              <div className="pl-9 pt-3">
+                                <span className="text-black" style={{ whiteSpace: 'pre-line' }}>{body}</span>
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="flex gap-3">
+                            <span className="luxury-body text-primary shrink-0 mt-0.5 tabular-nums">
+                              {String(i + 1).padStart(2, '0')}
+                            </span>
+                            <div>
+                              {title && (
+                                <p className="luxury-body text-black uppercase mb-2">{title}</p>
+                              )}
+                              <span className="text-black" style={{ whiteSpace: 'pre-line' }}>{body}</span>
+                            </div>
+                          </div>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ol>
               )}
             </div>
@@ -278,12 +349,15 @@ const ServiceModal = ({ serviceKey, onClose, fromPrice = false }: ServiceModalPr
             )}
             {formatPrice(Number(t(`services.${serviceKey}.price`)))}
           </p>
-          <EmailLink
+          <button
+            onClick={() => {
+              handleClose();
+              setTimeout(() => openForm(serviceKey), DURATION + 50);
+            }}
             className="luxury-label-cascadia border border-primary text-black px-8 py-3 tracking-[0.2em] transition-all duration-500 hover:bg-primary hover:text-primary-foreground shrink-0 uppercase"
-            service={t(`services.${serviceKey}.title`)}
           >
             {t('services.inquire')}
-          </EmailLink>
+          </button>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useFaq } from '@/contexts/FaqContext';
 
 const rectsIntersect = (a: DOMRect, b: DOMRect) =>
   !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
@@ -9,6 +10,7 @@ const BurgerMenu = ({ isModalOpen = false }: { isModalOpen?: boolean }) => {
   const [isLightBg, setIsLightBg] = useState(false);
   const ref = useRef<HTMLButtonElement>(null);
   const { t } = useLanguage();
+  const { openFaq } = useFaq();
 
   useEffect(() => {
     if (isModalOpen) setIsOpen(false);
@@ -48,13 +50,18 @@ const BurgerMenu = ({ isModalOpen = false }: { isModalOpen?: boolean }) => {
     { label: t('process.label'), id: 'process' },
     { label: t('gallery.label'), id: 'gallery' },
     { label: t('cta.label'), id: 'contact' },
+    { label: t('faq.label'), id: 'faq' },
   ];
 
-  const scrollTo = (id: string) => {
+  const handleNav = (id: string) => {
     setIsOpen(false);
-    setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    }, 350);
+    if (id === 'faq') {
+      setTimeout(openFaq, 350);
+    } else {
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      }, 350);
+    }
   };
 
   useEffect(() => {
@@ -135,7 +142,7 @@ const BurgerMenu = ({ isModalOpen = false }: { isModalOpen?: boolean }) => {
           {navItems.map((item, i) => (
             <button
               key={item.id}
-              onClick={() => scrollTo(item.id)}
+              onClick={() => handleNav(item.id)}
               className="flex items-baseline gap-4 w-full text-left group py-3 border-b"
               style={{
                 borderColor: 'rgba(242,227,208,0.1)',

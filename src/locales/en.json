@@ -32,7 +32,7 @@
       "desc": "You often find yourself staring at a full closet but still feel like you have nothing to wear. We go through every piece together, build outfit formulas, and create a shopping list for the missing essentials.",
       "format": "Online / Offline",
       "duration": "Online - 15 business days. Offline - up to 4 hrs (each additional hour + S$ 100)",
-      "price": "600",
+      "price": "900",
       "details": {
         "for": [
           "You often find yourself staring at a full closet but still feel like you have nothing to wear.",
@@ -61,7 +61,7 @@
       "desc": "A service designed to fulfill your wardrobe with new items, helping to create a fully functional wardrobe or complement existing one for the season.\nPlease note: this service can be used only after we have completed «Wardrobe Audit», so I already know what is missing.\nIf you want to create a wardrobe from scratch, please refer to the «Capsule Wardrobe» service.",
       "format": "Online / Offline",
       "duration": "Online: 7–10 business days. Offline: up to 4 hrs (each additional hour + S$ 100)",
-      "price": "600",
+      "price": "900",
       "details": {
         "for": [
           "We've completed a wardrobe audit and you want me to find the new pieces we agreed on.",
@@ -90,7 +90,7 @@
       "desc": "Creating a capsule wardrobe involves selecting pieces that work seamlessly together, tailored to your style and needs. Saves your time that would otherwise be spent scrolling online or in stores. Ensures that you purchase only items that truly fit, you like, and will be used.",
       "format": "Online",
       "duration": "around 20 business days (depending on capsule size)",
-      "price": "600",
+      "price": "900",
       "details": {
         "for": [
           "You want to save a significant amount of time that would otherwise be spent shopping in stores or online.",
@@ -130,7 +130,7 @@
       "title": "Monthly Mentoring",
       "desc": "Unlimited access to your stylist. Save with booking a 3-month subscription",
       "format": "Online",
-      "duration": "S$ 120 / week. S$ 350 / month. S$ 300 / 3 month",
+      "duration": "S$ 120 / week. S$ 350 / month. S$ 300 / when paid 3 month in advance",
       "price": "120",
       "details": {
         "for": [
@@ -148,6 +148,25 @@
           "Support in choosing specific categories (e.g. \"I need the perfect white shirt\" or \"help me find everyday jeans\"). I'll help you find what you're looking for — from the right silhouette to the right store — with attention to quality, fit, and value."
         ],
         "notes": "I provide professional advice and recommendations, but final decisions remain entirely yours. My goal is to guide, not to impose — helping you make conscious, confident, and independent style choices."
+      }
+    },
+    "transformation": {
+      "title": "Ultimate Transformation",
+      "desc": "I believe that personal style takes time. One session can be a great starting point, but lasting results come from a deeper and more consistent process.",
+      "format": "Offline",
+      "duration": "Up to 1 month",
+      "price": "3000",
+      "details": {
+        "description": "This service is for you if you want to change the way you think about style, the way you shop, and the way you build a relationship with your wardrobe.\n\nEven after making progress, we often return to familiar habits - buying similar pieces, repeating the same mistakes, and choosing what feels safe without even noticing it.\n\nWhy does this service work differently?\n\nReal transformation rarely happens through one wardrobe edit or one shopping day. Style is not only about clothing. It is also about habits, perception, taste, confidence, and learning to recognise what actually works for you.",
+        "steps_label": "Inside the Process:",
+        "steps": [
+          "Full Wardrobe Edit\n\nA complete wardrobe edit, just like in my separate wardrobe edit service, with a full review of your pieces for the season.\n\nWe go through what you already own, define what works, what is missing, and what no longer serves you, so your wardrobe has a stronger and more intentional foundation.",
+          "Shopping Curation\n\nThis stage includes personalised online shopping support based on your needs, wardrobe gaps, lifestyle, and style direction.\n\nAfter we discuss and agree on the pieces in advance, I select and order everything myself, so you do not need to spend time searching, comparing, or managing the process on your own.\n\nThe goal is to find the best options for you in a thoughtful way, without rushing into random purchases.\n\nBudget and payment for the clothing are discussed separately. Please read the FAQ section for a broader understanding of how this part of the service works.",
+          "Fitting Sessions\n\nYou will have 2 fitting sessions at your home for your convenience. Once everything has arrived, we meet at your home for a try-on.\n\nI bring everything with me, and together we try on all the clothes, review how they fit into your wardrobe, and see what works best for your body, lifestyle, and overall style direction.\n\nI take care of the returns for anything that does not work for you, so you don't need to deal with the process at all.\n\nDelivery, return shipping, and any associated costs are paid separately by the client. Please check the FAQ section for more details.",
+          "Adjustments\n\nOnce the main pieces are selected, we refine them through tailoring if needed.\n\nEven small adjustments can make a significant difference in how a piece fits, feels, and looks on you. Sometimes these details are almost invisible, but they can completely change the overall impression and make the wardrobe feel much more polished.",
+          "Results\n\nAt the end, you receive a fully digitised wardrobe on your phone.\n\nThis makes it much easier to see everything clearly, navigate your wardrobe, and use it in a practical way in your daily life.\n\nYou also receive more than 30 ready outfit combinations created specifically for your lifestyle and needs.\n\nThese looks are designed to make getting dressed easier, faster, and more enjoyable, while helping you use your wardrobe in a more complete and versatile way.",
+          "Support\n\nAfter receiving your final file and outfit combinations, you also have one month of my full support.\n\nThis gives you time to settle into your updated wardrobe, ask questions, get guidance, and feel supported while applying everything in real life."
+        ]
       }
     }
   },
@@ -224,10 +243,107 @@
   "cta": {
     "label": "Contact",
     "heading": "Let’s build a refined wardrobe that works",
-    "contactMe": "Contact me:",
+    "contactMe": "Contact me",
     "telegram": "telegram",
     "instagram": "inst",
     "email": "mail",
     "whatsapp": "WhatsApp"
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Frequently Asked Questions",
+    "questions": [
+      {
+        "q": "Who this is for",
+        "a": "If getting dressed feels confusing, unsatisfying, or disconnected from the woman you are today or the woman you are becoming, this kind of work may be exactly what you need. You want to understand what truly works for your body, lifestyle, preferences, and everyday reality — not just keep buying random new pieces in the hope that something finally clicks.\n\nIt may be especially helpful if:\n • you feel stuck with your wardrobe and want a clearer, more refined direction\n • you want to better understand what genuinely suits your body, lifestyle, and personal taste\n • you are tired of buying pieces that do not work well with what you already own\n • your wardrobe feels disconnected, inconsistent, or no longer reflective of who you are\n • your style feels like it has lost its direction and no longer reflects you fully\n • you want to invest in pieces that will serve you well over time, not just for a moment"
+      },
+      {
+        "q": "Who this is not for",
+        "a": "This may not be the right fit if:\n • you are not planning to purchase anything at all and are only looking for general inspiration\n • you only need one outfit for a single occasion or event (unless you are specifically booking my dedicated service for event or photoshoot styling)\n • your main priority is finding the cheapest possible options regardless of quality, fit, or longevity\n • your focus is on getting as many new outfits as possible rather than building a wardrobe that works as a whole\n • you prefer a more trendy, fast-fashion-focused approach with frequent impulse purchases"
+      },
+      {
+        "q": "What if I only need help with a few pieces or one occasion?",
+        "a": "I do offer specific services for photoshoot styling and event dressing. If that is what you need, you are very welcome to explore this service.\n\nAt the same time, the core of my work is much deeper than simply selecting a few items or putting together one look. I work best with clients who are ready to invest their time, attention, and resources into a more meaningful transformation in this area of their life.\n\nIf you are hoping to completely hand over responsibility for your style transformation without being personally involved in the process, I may not be the right fit. Even though I always try to make the process feel as easy, supportive, and comfortable as possible, your presence, honesty, and engagement are a very important part of achieving a real and lasting result.\n\nThe strongest transformations happen when we work together — not when style is treated as something that can be fully outsourced without your participation."
+      },
+      {
+        "q": "How fast can we start?",
+        "a": "Bookings are made in advance, and available dates can fill up ahead of time, especially for more in-depth services.\n\nTo secure a booking, a deposit is required. This is important for both sides, as it reflects mutual commitment, involvement, and respect for the work ahead. I always aim to do my work with a high level of depth and attention, which is why I only take on a limited number of clients at one time.\n\nThe exact timing and structure depend on the service. Some formats can be completed in a single session, while others unfold across several stages, such as consultation, wardrobe analysis, sourcing, fitting, and follow-up support."
+      },
+      {
+        "q": "How do I pay for services & clothing?",
+        "a": "A 50% deposit is required to confirm and secure your booking. I recommend planning ahead where possible, as I work with regular clients and tend to schedule my calendar in advance. At the same time, please do not hesitate to reach out even if your timing is not ideal — I am always happy to see what may be possible and find a solution if I can.\n\nThe remaining balance is paid according to the service format and timing agreed upon in advance.\n\nStyling services and clothing purchases are paid separately. Unless otherwise agreed, clients purchase their own clothing, whether in-store or online. If I provide links, curated selections, or a shopping edit, these are created to guide and simplify your decision-making process, while the purchases themselves remain the client's responsibility. The same applies to returns, which are subject to each retailer's own policy and deadlines."
+      },
+      {
+        "q": "Are there additional costs?",
+        "a": "Potentially, yes.\n\nThe most common additional cost is tailoring. I strongly believe that alterations can completely transform how clothing looks and feels on the body. Even very good pieces often need small adjustments to achieve a more polished, flattering, and personal result.\n\nTailoring costs are separate from styling services and are paid directly to the tailor.\n\nDepending on the service, there may also be additional costs related to:\n • clothing purchases\n • delivery or return fees\n • dry cleaning or garment preparation\n • transport\n • special sourcing requests\n\nAny relevant additional costs will always be discussed as early as possible, so you have a clear understanding of the full process in advance."
+      },
+      {
+        "q": "Rescheduling & cancellation policy",
+        "a": "A deposit is required to reserve your booking and is non-refundable, as your date and time are set aside specifically for you.\n\nRescheduling is possible up to two times with advance notice. Of course, unexpected life situations and genuine emergencies do happen, and if needed, we will do our best to adapt the process with understanding.\n\nRepeated schedule changes may be subject to an additional fee, especially for more involved services that require planning, sourcing, fittings, or coordination with store timelines and return windows.\n\nIf you need to cancel, please email me at slavich.margarita@gmail.com."
+      },
+      {
+        "q": "Where do you shop from & how much should I budget for clothes?",
+        "a": "The budget always depends on your goals, your current wardrobe, your lifestyle, and the level of transformation you want to achieve.\n\nI always recommend discussing your clothing budget openly from the very beginning. This is important not only for me as your stylist, but first and foremost for you — to achieve the kind of transformation you are hoping for, it is essential to allocate a realistic budget for the pieces that will truly create that shift.\n\nAs a general reference, a quality piece usually starts at around 200 SGD and can go up to 800 SGD in the middle-up segment, while luxury pieces typically begin at around 800 SGD and above.\n\nFor clients building or redefining a wardrobe, I usually recommend planning from at least 5,000 SGD and up to create a capsule that covers essential needs well. That said, this is never one-size-fits-all — the final number always depends on your personal goals, wardrobe condition, categories needed, and the standard you want to reach.\n\nEvery client is different. Some need to fill obvious gaps, while others need to rebuild the foundation of their wardrobe more deeply. My work is centered around quality, longevity, and real wardrobe value, which is why I rarely rely heavily on mass-market pieces. In most cases, they do not bring the level of refinement, durability, or long-term value that I want for my clients.\n\nI work with various budgets, and I always aim to find pieces that are truly worth their price — not simply pieces that are expensive because of a well-known name. I am also open to incorporating vintage or preloved pieces when they suit your aesthetic needs and budget.\n\nWhen you invest in better-made clothing, you tend to reach for those pieces again and again. The difference often reveals itself in the way a piece fits, feels and wears over time.\n\nIf your main goal is to get as many new outfits as possible through predominantly mass-market brands, I may not be the best fit for you. I can occasionally include selected pieces from mass-market brands when they genuinely serve the wardrobe well, especially for specific basics or budget considerations. However, I rarely build wardrobes around that segment, and I do not source from ultra-fast-fashion brands such as SHEIN, Temu, and similar platforms.\n\nI do not believe in overconsumption, and I will never suggest buying for the sake of volume. I would always rather recommend fewer, stronger, more versatile pieces than a high number of items with little lasting value."
+      },
+      {
+        "q": "Can you shop on my behalf?",
+        "a": "Yes, it depends on the service format you choose.\n\nIn most cases, placing orders and handling returns remains the client's responsibility. However, I fully understand that this part of the process can feel stressful, time-consuming, confusing, or simply overwhelming — and that is exactly why I am always happy to help make it easier.\n\nIf you have very limited time or would prefer to be less involved in the ordering process, an additional shopping support option can be added to almost any service for an extra fee. In this format, I can place orders on your behalf, come over for a home try-on, manage the selection process more closely, return unsuitable pieces, and reorder where necessary.\n\nThe exact format of purchase payments is always discussed separately in advance, together with your budget and all practical details. I always do my best to minimise unnecessary returns and select the strongest options from the start. At the same time, any delivery charges, return shipping costs, and related retailer fees remain the client's responsibility. All of these details and expected costs are communicated in advance so that the process feels fully transparent and easy to understand.\n\nFor online shopping support, I can also help with selection logic, sizing guidance, and narrowing down options in a much more strategic way."
+      },
+      {
+        "q": "Do you work only with new clothes?",
+        "a": "No — not at all.\n\nA very important part of my process is working with what you already own. I usually begin by identifying what is worth keeping, what can be styled in a better way, what is genuinely missing, and what no longer supports your image, lifestyle, or current needs.\n\nA wardrobe review is incredibly valuable because it helps us understand your patterns, your habits, how your mind works when it comes to shopping, what you tend to buy impulsively, and what hidden gems may already be sitting in your wardrobe. This part of the process is often just as insightful as the shopping itself.\n\nNew pieces should complement and strengthen your wardrobe — not replace everything unnecessarily."
+      },
+      {
+        "q": "Can you travel to me?",
+        "a": "Yes, of course.\n\nIf you are located outside Singapore or would like to discuss an in-person service in a different location, please contact me directly to discuss the details and adjusted pricing."
+      },
+      {
+        "q": "Other services",
+        "a": "Not sure which option is right for you?\n\nYou are always welcome to get in touch and share a bit about what you are looking for. From there, I can guide you toward the most suitable service or let you know whether a more tailored format would make more sense."
+      },
+      {
+        "q": "Do you offer corporate styling or brand collaborations?",
+        "a": "I collaborate with selected brands, stores, and companies. Especially I love projects with a clear sense of quality, a strong idea behind the brand, and a mission that feels thoughtful and aligned.\n\n • Brand collaborations — I collaborate with brands whose quality, aesthetic, and values feel aligned with my approach. This may also include store reviews and curated product selections. I can create a thoughtful edit of best pieces, highlight key items worth focusing on, and help present a store or brand offering in a more refined and wearable way.\n\n • Social media content creation — I can create social media content that presents products, styling ideas, and brand identity in a way that feels visually strong, relevant, and authentic.\n\n • Team training for boutiques and sales consultants — I can conduct styling sessions for employees and store consultants to help them better understand how styling works in practice. This includes strengthening their eye for outfit building, combinations, proportions, and client needs.\n\n • Corporate styling sessions — I can create styling sessions for companies that want to help their employees feel more polished, confident, and appropriate in a professional environment.\n\nEach collaboration is shaped individually depending on the format, goals, audience, and level of involvement required.\n\nIf you are reaching out on behalf of a brand, store, showroom, or company, you are very welcome to get in touch with a short brief outlining your request, timing, location, and goals. From there, I can let you know whether it feels like the right fit and share the next steps, availability, and a custom quote where relevant."
+      }
+    ]
+  },
+  "contactForm": {
+    "title": "Get in Touch",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "howHeard": "How did you hear about me?",
+    "howHeardOptions": {
+      "google": "Google",
+      "instagram": "Instagram",
+      "wordOfMouth": "Word of mouth",
+      "other": "Other"
+    },
+    "service": "What would you like to get in touch about?",
+    "serviceOptions": {
+      "wardrobeAudit": "Wardrobe Audit",
+      "shoppingCuration": "Shopping Curation",
+      "capsuleWardrobe": "Capsule Wardrobe",
+      "eventLook": "Shoot / Event Look",
+      "ultimateTransformation": "Ultimate Transformation",
+      "brandCollaboration": "Brand Collaboration"
+    },
+    "details": "Tell me a bit what you are looking for — the more detail, the better!",
+    "budget": "What is your budget for clothing + accessories for now, excluding service fees?",
+    "budgetOptions": {
+      "5kBelow": "5k and below",
+      "10k": "Up to 10k SGD",
+      "10_20k": "10–20 000 SGD",
+      "noLimit": "No limit"
+    },
+    "servicesNote": "You’ll find all my services here on our website. I also encourage you to check FAQs, as many questions are answered there before we schedule the call.",
+    "confirmLabel": "Please confirm you have read through my services and FAQ’s",
+    "submit": "Send",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email",
+    "confirmRequired": "Please confirm you have read through services and FAQ’s",
+    "sending": "Sending...",
+    "success": "Thank you! Your message has been sent.",
+    "error": "Something went wrong. Please try again."
   }
 }
