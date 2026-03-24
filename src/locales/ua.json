@@ -323,11 +323,12 @@
     },
     "service": "З якого питання ви хочете зв'язатися?",
     "serviceOptions": {
+      "ultimateTransformation": "Повна трансформація",
       "wardrobeAudit": "Аудит гардеробу",
       "shoppingCuration": "Шопінг супровід",
       "capsuleWardrobe": "Капсульний гардероб",
       "eventLook": "Стилізація події / зйомки",
-      "ultimateTransformation": "Повна трансформація",
+      "monthlyMentoring": "Щомісячний менторінг",
       "brandCollaboration": "Колаборація з брендом"
     },
     "details": "Розкажіть трохи більше про ваш запит — чим детальніше, тим краще!",

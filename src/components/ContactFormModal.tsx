@@ -5,11 +5,12 @@ import { useContactForm } from '@/contexts/ContactFormContext';
 const WEB3FORMS_KEY = 'e7347692-2656-46b0-87a4-6ae9bf36e877';
 
 const SERVICE_KEYS = [
+  'ultimateTransformation',
   'wardrobeAudit',
   'shoppingCuration',
   'capsuleWardrobe',
   'eventLook',
-  'ultimateTransformation',
+  'monthlyMentoring',
   'brandCollaboration',
 ] as const;
 

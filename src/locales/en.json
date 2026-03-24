@@ -321,11 +321,12 @@
     },
     "service": "What would you like to get in touch about?",
     "serviceOptions": {
+      "ultimateTransformation": "Ultimate Transformation",
       "wardrobeAudit": "Wardrobe Audit",
       "shoppingCuration": "Shopping Curation",
       "capsuleWardrobe": "Capsule Wardrobe",
       "eventLook": "Shoot / Event Look",
-      "ultimateTransformation": "Ultimate Transformation",
+      "monthlyMentoring": "Monthly Mentoring",
       "brandCollaboration": "Brand Collaboration"
     },
     "details": "Tell me a bit what you are looking for — the more detail, the better!",
