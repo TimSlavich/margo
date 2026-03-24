@@ -19,8 +19,8 @@ const services: Service[] = [
   { key: 'transformation', image: transformationImg, fromPrice: false },
   { key: 'wardrobe', image: wardrobeImg, fromPrice: false },
   { key: 'shopping', image: shoppingImg, fromPrice: false },
-  { key: 'capsule', image: capsuleImg, fromPrice: false },
   { key: 'event', image: eventImg, fromPrice: true },
+  { key: 'capsule', image: capsuleImg, fromPrice: false },
   { key: 'mentoring', image: mentoringImg, fromPrice: true },
 ];
 
