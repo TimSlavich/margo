@@ -17,6 +17,8 @@ const SERVICE_KEYS = [
 
 const HOW_HEARD_KEYS = ['google', 'instagram', 'wordOfMouth', 'other'] as const;
 const BUDGET_KEYS = ['5kBelow', '10k', '10_20k', 'noLimit'] as const;
+const FORMAT_KEYS = ['online', 'offline'] as const;
+const TIME_RELEVANCE_KEYS = ['urgent', 'readyToWait'] as const;
 
 const SERVICE_MAP: Record<string, string> = {
   wardrobe: 'wardrobeAudit',
@@ -40,6 +42,8 @@ const ContactFormModal = () => {
   const [email, setEmail] = useState('');
   const [howHeard, setHowHeard] = useState('');
   const [service, setService] = useState('');
+  const [format, setFormat] = useState('');
+  const [timeRelevance, setTimeRelevance] = useState('');
   const [details, setDetails] = useState('');
   const [budget, setBudget] = useState('');
   const [confirmed, setConfirmed] = useState(false);
@@ -101,6 +105,8 @@ const ContactFormModal = () => {
       setEmail('');
       setHowHeard('');
       setService('');
+      setFormat('');
+      setTimeRelevance('');
       setDetails('');
       setBudget('');
       setConfirmed(false);
@@ -118,6 +124,8 @@ const ContactFormModal = () => {
     if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.email = true;
     if (!howHeard) errs.howHeard = true;
     if (!service) errs.service = true;
+    if (!format) errs.format = true;
+    if (!timeRelevance) errs.timeRelevance = true;
     if (!details.trim()) errs.details = true;
     if (!budget) errs.budget = true;
     if (!confirmed) errs.confirmed = true;
@@ -132,6 +140,8 @@ const ContactFormModal = () => {
 
     const serviceLabel = t(`contactForm.serviceOptions.${service}`);
     const howHeardLabel = t(`contactForm.howHeardOptions.${howHeard}`);
+    const formatLabel = t(`contactForm.formatOptions.${format}`);
+    const timeRelevanceLabel = t(`contactForm.timeRelevanceOptions.${timeRelevance}`);
     const budgetLabel = t(`contactForm.budgetOptions.${budget}`);
 
     setSending(true);
@@ -148,6 +158,8 @@ const ContactFormModal = () => {
           email,
           'How heard about me': howHeardLabel,
           'Service': serviceLabel,
+          'Format': formatLabel,
+          'Time relevance': timeRelevanceLabel,
           'Details': details,
           'Budget': budgetLabel,
         }),
@@ -173,6 +185,7 @@ const ContactFormModal = () => {
   const inputClass =
     'w-full px-4 py-3 bg-transparent border text-sm luxury-body text-black focus:outline-none transition-colors duration-300';
   const labelClass = 'luxury-body text-black text-sm uppercase mb-2 block';
+  const requiredMark = <span className="text-red-400 ml-0.5">*</span>;
   const errorBorder = 'border-red-400';
   const normalBorder = 'border-[#3a171a]/30 focus:border-[#3a171a]';
 
@@ -254,7 +267,7 @@ const ContactFormModal = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelClass}>
-                {t('contactForm.firstName')}
+                {t('contactForm.firstName')}{requiredMark}
               </label>
               <input
                 type="text"
@@ -262,10 +275,13 @@ const ContactFormModal = () => {
                 onChange={(e) => setFirstName(e.target.value)}
                 className={`${inputClass} ${submitted && errors.firstName ? errorBorder : normalBorder}`}
               />
+              {submitted && errors.firstName && (
+                <p className="text-red-400 text-xs mt-1 luxury-body">{t('contactForm.required')}</p>
+              )}
             </div>
             <div>
               <label className={labelClass}>
-                {t('contactForm.lastName')}
+                {t('contactForm.lastName')}{requiredMark}
               </label>
               <input
                 type="text"
@@ -273,13 +289,16 @@ const ContactFormModal = () => {
                 onChange={(e) => setLastName(e.target.value)}
                 className={`${inputClass} ${submitted && errors.lastName ? errorBorder : normalBorder}`}
               />
+              {submitted && errors.lastName && (
+                <p className="text-red-400 text-xs mt-1 luxury-body">{t('contactForm.required')}</p>
+              )}
             </div>
           </div>
 
           {/* Email */}
           <div>
             <label className={labelClass}>
-              {t('contactForm.email')}
+              {t('contactForm.email')}{requiredMark}
             </label>
             <input
               type="email"
@@ -295,7 +314,7 @@ const ContactFormModal = () => {
           {/* How heard */}
           <div>
             <label className={labelClass}>
-              {t('contactForm.howHeard')}
+              {t('contactForm.howHeard')}{requiredMark}
             </label>
             <div className={radioGroupClass}>
               {HOW_HEARD_KEYS.map((key) => (
@@ -317,7 +336,7 @@ const ContactFormModal = () => {
           {/* Service */}
           <div>
             <label className={labelClass}>
-              {t('contactForm.service')}
+              {t('contactForm.service')}{requiredMark}
             </label>
             <div className={radioGroupClass}>
               {SERVICE_KEYS.map((key) => (
@@ -336,10 +355,57 @@ const ContactFormModal = () => {
             )}
           </div>
 
+          {/* Format + Time relevance row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Format */}
+            <div>
+              <label className={labelClass}>
+                {t('contactForm.format')}{requiredMark}
+              </label>
+              <div className={radioGroupClass}>
+                {FORMAT_KEYS.map((key) => (
+                  <RadioOption
+                    key={key}
+                    name="format"
+                    value={key}
+                    checked={format === key}
+                    onChange={setFormat}
+                    label={t(`contactForm.formatOptions.${key}`)}
+                  />
+                ))}
+              </div>
+              {submitted && errors.format && (
+                <p className="text-red-400 text-xs mt-1 luxury-body">{t('contactForm.required')}</p>
+              )}
+            </div>
+
+            {/* Time relevance */}
+            <div>
+              <label className={labelClass}>
+                {t('contactForm.timeRelevance')}{requiredMark}
+              </label>
+              <div className={radioGroupClass}>
+                {TIME_RELEVANCE_KEYS.map((key) => (
+                  <RadioOption
+                    key={key}
+                    name="timeRelevance"
+                    value={key}
+                    checked={timeRelevance === key}
+                    onChange={setTimeRelevance}
+                    label={t(`contactForm.timeRelevanceOptions.${key}`)}
+                  />
+                ))}
+              </div>
+              {submitted && errors.timeRelevance && (
+                <p className="text-red-400 text-xs mt-1 luxury-body">{t('contactForm.required')}</p>
+              )}
+            </div>
+          </div>
+
           {/* Details */}
           <div>
             <label className={labelClass}>
-              {t('contactForm.details')}
+              {t('contactForm.details')}{requiredMark}
             </label>
             <textarea
               value={details}
@@ -347,12 +413,15 @@ const ContactFormModal = () => {
               rows={4}
               className={`${inputClass} resize-none ${submitted && errors.details ? errorBorder : normalBorder}`}
             />
+            {submitted && errors.details && (
+              <p className="text-red-400 text-xs mt-1 luxury-body">{t('contactForm.required')}</p>
+            )}
           </div>
 
           {/* Budget */}
           <div>
             <label className={labelClass}>
-              {t('contactForm.budget')}
+              {t('contactForm.budget')}{requiredMark}
             </label>
             <div className={radioGroupClass}>
               {BUDGET_KEYS.map((key) => (

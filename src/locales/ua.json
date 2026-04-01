@@ -331,6 +331,16 @@
       "monthlyMentoring": "Щомісячний менторінг",
       "brandCollaboration": "Колаборація з брендом"
     },
+    "format": "Формат",
+    "formatOptions": {
+      "online": "Онлайн",
+      "offline": "Офлайн"
+    },
+    "timeRelevance": "Терміновість",
+    "timeRelevanceOptions": {
+      "urgent": "Терміново",
+      "readyToWait": "Готовий/а зачекати"
+    },
     "details": "Розкажіть трохи більше про ваш запит — чим детальніше, тим краще!",
     "budget": "Який ваш бюджет на одяг та аксесуари (без вартості послуг)?",
     "budgetOptions": {

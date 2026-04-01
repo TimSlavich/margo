@@ -329,6 +329,16 @@
       "monthlyMentoring": "Monthly Mentoring",
       "brandCollaboration": "Brand Collaboration"
     },
+    "format": "Format",
+    "formatOptions": {
+      "online": "Online",
+      "offline": "Offline"
+    },
+    "timeRelevance": "Time relevance",
+    "timeRelevanceOptions": {
+      "urgent": "Urgent",
+      "readyToWait": "I'm ready to wait"
+    },
     "details": "Tell me a bit what you are looking for — the more detail, the better!",
     "budget": "What is your budget for clothing + accessories for now, excluding service fees?",
     "budgetOptions": {
