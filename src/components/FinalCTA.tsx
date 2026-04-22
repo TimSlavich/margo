@@ -103,7 +103,7 @@ const FinalCTA = () => {
 
           <button
             onClick={openFaq}
-            className="w-full flex items-center justify-center gap-3 px-6 sm:px-8 py-3 luxury-label-cascadia text-[0.65rem] sm:text-xs tracking-[0.1em] sm:tracking-[0.2em] transition-all duration-500 border hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase whitespace-nowrap"
+            className="w-full flex items-center justify-center gap-3 px-6 sm:px-8 py-3 luxury-label-cascadia text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.25em] transition-all duration-500 border hover:bg-[#3a171a] hover:text-[var(--milk)] uppercase whitespace-nowrap"
             style={{ color: 'var(--milk)', borderColor: '#3a171a' }}
           >
             {t('faq.label')}

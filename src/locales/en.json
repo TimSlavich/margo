@@ -25,7 +25,7 @@
     "from": "from",
     "format": "Format",
     "duration": "Timeline",
-    "inquire": "Contact me to book",
+    "inquire": "Get in touch",
     "details": "Learn more",
     "wardrobe": {
       "title": "Wardrobe Audit",
@@ -243,7 +243,7 @@
   "cta": {
     "label": "Contact",
     "heading": "Let’s build a refined wardrobe that works",
-    "contactMe": "Contact me",
+    "contactMe": "Get in touch",
     "telegram": "telegram",
     "instagram": "inst",
     "email": "mail",
@@ -295,7 +295,7 @@
       },
       {
         "q": "Can you travel to me?",
-        "a": "Yes, of course.\n\nIf you are located outside Singapore or would like to discuss an in-person service in a different location, please contact me directly to discuss the details and adjusted pricing."
+        "a": "Yes, of course.\n\nIf you are located outside Singapore or would like to discuss an in-person service in a different location, please get in touch directly to discuss the details and adjusted pricing."
       },
       {
         "q": "Other services",
